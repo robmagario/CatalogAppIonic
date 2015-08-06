@@ -3,14 +3,22 @@
         <h1 class="title">Home</h1>
     </ion-header-bar>
     <ion-content padding="True">
+        <div ng-show="inSubCata" ng-repeat="subCate in categories[1].sections">
+            <li>{{subCate.title}}</li>
+        </div>
+        <!--<div ng-show="inSubCata" ng-repeat="subCate in categories[0].sections">-->
+            <!--<li>{{subCate.title}}</li>-->
+        <!--</div>-->
 
+        <!--<img src="{{newInfo}}"><br>-->
+        <!--{{newInfo2}}-->
         <div class="list card card-wrap" ng-repeat="category in categories">
 
             <div class="item">
                 <h2>{{category.title}}</h2>
             </div>
 
-            <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
+            <div ng-show="{{category.thumbnail != undefined}}" ng-click="showCata($index)" class="full-card">
                 <img src="{{category.thumbnail}}">
             </div>
 
