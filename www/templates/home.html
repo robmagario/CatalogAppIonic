@@ -15,7 +15,7 @@
         <div class="list card card-wrap" ng-repeat="category in categories">
 
             <div class="item">
-                <h2>{{category.title}}</h2>
+                <h2><a href="#/category/:category">{{category.title}}</a></h2>
             </div>
 
             <div ng-show="{{category.thumbnail != undefined}}" ng-click="showCata($index)" class="full-card">

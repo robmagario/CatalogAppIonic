@@ -4,15 +4,10 @@
     </ion-header-bar>
     <ion-content padding="True">
 
-        <div class="list card card-wrap" ng-repeat="category in categories">
-
-            <div class="item">
-                <h2>{{category.title}}</h2>
-            </div>
-
-            <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
-                <img src="{{category.thumbnail}}">
-            </div>
+       This shows the contents inside a category.
+        <div ng-show="{{category.thumbnail != undefined}}" ng-click="showCata($index)" class="full-card">
+            <img src="{{category.thumbnail}}">
+        </div>
 
         </div>
     </ion-content>
