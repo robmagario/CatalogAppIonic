@@ -4,11 +4,13 @@
     </ion-header-bar>
     <ion-content padding="True">
 
-       This shows the contents inside a category.
+       <p>This shows the contents inside a category.</p>
         <div ng-show="{{category.thumbnail != undefined}}" ng-click="showCata($index)" class="full-card">
             <img src="{{category.thumbnail}}">
         </div>
-
+        <div ng-repeat="oneSec in oneSection">
+            <li>{{oneSec.title}}</li>
+        </div>
         </div>
     </ion-content>
 </ion-view>
