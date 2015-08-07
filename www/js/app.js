@@ -31,9 +31,16 @@ angular.module('catalog', ['ionic', 'catalog.controllers'])
                 controller: 'HomeCtrl'
             })
             .state('category', {
-                url: '/category/:category',
+                url: '/category/',
                 templateUrl: 'templates/category.html',
-                controller: 'CategoryCtrl'
+                controller: 'CategoryCtrl',
+                params: {category: null}
+            })
+            .state('section', {
+                url: '/section/',
+                templateUrl: 'templates/section.html',
+                controller: 'SectionCtrl',
+                params: {section: null}
             })
         ;
         // if none of the above states are matched, use this as the fallback

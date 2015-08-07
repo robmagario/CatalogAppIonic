@@ -1,16 +1,12 @@
-<ion-view view-title="Category">
+<ion-view view-title="{{category.title}}">
     <ion-header-bar>
-        <h1 class="title">Category</h1>
+        <h1 class="title">{{category.title}}</h1>
     </ion-header-bar>
     <ion-content padding="True">
-
-       <p>This shows the contents inside a category.</p>
-        <div ng-show="{{category.thumbnail != undefined}}" ng-click="showCata($index)" class="full-card">
-            <img src="{{category.thumbnail}}">
-        </div>
-        <div ng-repeat="oneSec in oneSection">
-            <li>{{oneSec.title}}</li>
-        </div>
-        </div>
+        <ion-list>
+            <ion-item ng-repeat="section in sections" ng-click="selectSection(section)">
+                {{section.title}}
+            </ion-item>
+        </ion-list>
     </ion-content>
 </ion-view>
