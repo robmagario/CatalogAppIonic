@@ -23,7 +23,6 @@ angular.module('catalog.controllers', [])
                     }
                 }
                 oneSection=$scope.oneSection;
-                //console.log('onesection: ',$scope.oneSection);
 
             };
             $scope.objectKeys=function(_it,_index){
@@ -36,7 +35,6 @@ angular.module('catalog.controllers', [])
                 $scope.inSubCate=!$scope.inSubCate;
                 $scope.subCateView=index;
                 //$scope.newInfo="http://escgroup.net/site/assets/files/1019/p_10_1.0x100.jpg?nc=1438425728";
-                //$scope.newInfo2=$scope.categories[0].sections[2].title;
             }
         }, function (err) {
             console.error("HOME", err);
@@ -45,11 +43,20 @@ angular.module('catalog.controllers', [])
 })
 
     .controller('CategoryCtrl', function ($scope, $http, $ionicModal, $timeout) {
-        $http.get('http://escgroup.net/').then(function (res) {
-            $scope.categories = res.data;
+        var _url="http://escgroup.net/esc-hot-rolled-sheet-piles/z-hot-rolled-sheet-piles/";
+        $http.get(_url).then(function (res) {
+        //$http.get('http://escgroup.net/').then(function (res) {
+            $scope.myData= res.data;
+            $scope.myHtml= $scope.myData.content;
             $scope.numtwo= 2;
             var i,j=0;
             $scope.oneSection=oneSection;
+
+            ('ng-bind-html', function() {
+                expect(element(by.binding('myHTML')).getText()).toBe(
+                    $scope.myHtml);
+            });
+             console.log('scope','\n',$scope.myHtml);
         }, function (err) {
             console.error("HOME", err);
         });
