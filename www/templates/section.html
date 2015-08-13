@@ -1,17 +1,7 @@
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="https://cdn.rawgit.com/jmosbech/StickyTableHeaders/master/js/jquery.stickytableheaders.min.js"></script>
-
-<script>
-    $(function () {
-        $("table").stickyTableHeaders();
-    });
-</script>
-
 <ion-view view-title="{{section.title}}">
     <ion-header-bar>
         <h1 class="title">{{section.title}}</h1>
     </ion-header-bar>
-    <ion-content padding="True">
-        <div ng-bind-html="trustContent(sectionData.content)"></div>
+    <ion-content ng-bind-html="trustContent(sectionData.content)" >
     </ion-content>
 </ion-view>
