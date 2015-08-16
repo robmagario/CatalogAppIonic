@@ -2,6 +2,7 @@
     <ion-header-bar>
         <h1 class="title">{{section.title}}</h1>
     </ion-header-bar>
-    <ion-content ng-bind-html="trustContent(sectionData.content)" >
+    <ion-content>
+        <div bind-html-compile="trustContent(sectionData.content)"></div>
     </ion-content>
 </ion-view>

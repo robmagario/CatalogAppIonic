@@ -1,4 +1,4 @@
-angular.module('catalog.controllers', [])
+var module = angular.module('catalog.controllers', [])
     .controller('HomeCtrl', function ($scope, $state, $http, $ionicModal, $timeout) {
         $http.get('http://escgroup.net/').then(function (res) {
             $scope.categories = res.data;
@@ -27,7 +27,7 @@ angular.module('catalog.controllers', [])
         }
     })
 
-    .controller('SectionCtrl', function ($scope, $ionicHistory, $sce, $state, $stateParams, $http, $ionicModal, $timeout) {
+    .controller('SectionCtrl', function ($scope, $ionicHistory, $compile, $sce, $state, $stateParams, $http, $ionicModal, $timeout) {
         if ($stateParams.section == null) {
             $state.go('home');
             $ionicHistory.clearHistory();
@@ -45,5 +45,27 @@ angular.module('catalog.controllers', [])
             return $sce.trustAsHtml(html);
         };
     })
+
+    .directive('bindHtmlCompile', ['$compile', function ($compile) {
+          return {
+              restrict: 'A',
+              link: function (scope, element, attrs) {
+                  scope.$watch(function () {
+                      return scope.$eval(attrs.bindHtmlCompile);
+                  }, function (value) {
+                      // Incase value is a TrustedValueHolderType, sometimes it
+                      // needs to be explicitly called into a string in order to
+                      // get the HTML string.
+                      element.html(value && value.toString());
+                      // If scope is provided use it, otherwise use parent scope
+                      var compileScope = scope;
+                      if (attrs.bindHtmlScope) {
+                          compileScope = scope.$eval(attrs.bindHtmlScope);
+                      }
+                      $compile(element.contents())(compileScope);
+                  });
+              }
+          };
+    }])
 
 ;
