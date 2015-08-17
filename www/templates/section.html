@@ -1,3 +1,82 @@
+<style>
+
+    div.tableContainer {
+        clear: both;
+        border: 1px solid #963;
+        height: 285px;
+        overflow: auto;
+        width: 756px
+    }
+
+    /* Reset overflow value to hidden for all non-IE browsers. */
+    html > body div.tableContainer {
+        overflow: hidden;
+        width: 756px
+    }
+
+    /* define width of table. IE browsers only                 */
+    div.tableContainer table {
+        float: left;
+        width: 740px
+    }
+
+    /* define width of table. Add 16px to width for scrollbar.           */
+    /* All other non-IE browsers.                                        */
+    html > body div.tableContainer table {
+        width: 756px
+    }
+
+    /* set table header to a fixed position. WinIE 6.x only                                       */
+    /* In WinIE 6.x, any element with a position property set to relative and is a child of       */
+    /* an element that has an overflow property set, the relative value translates into fixed.    */
+    /* Ex: parent element DIV with a class of tableContainer has an overflow property set to auto */
+    thead.fixedHeader tr {
+        position: relative
+    }
+
+    /* set THEAD element to have block level attributes. All other non-IE browsers            */
+    /* this enables overflow to work on TBODY element. All other non-IE, non-Mozilla browsers */
+    html > body thead.fixedHeader tr {
+        display: block
+    }
+
+    /* make the TH elements pretty */
+    thead.fixedHeader th {
+        font-weight: normal;
+        padding: 4px 3px;
+        text-align: left
+    }
+
+    /* make the A elements pretty. makes for nice clickable headers                */
+    thead.fixedHeader a, thead.fixedHeader a:link, thead.fixedHeader a:visited {
+        color: #FFF;
+        display: block;
+        text-decoration: none;
+        width: 100%
+    }
+
+    /* make the A elements pretty. makes for nice clickable headers                */
+    /* WARNING: swapping the background on hover may cause problems in WinIE 6.x   */
+    thead.fixedHeader a:hover {
+        color: #FFF;
+        display: block;
+        text-decoration: underline;
+        width: 100%
+    }
+
+    /* define the table content to be scrollable                                              */
+    /* set TBODY element to have block level attributes. All other non-IE browsers            */
+    /* this enables overflow to work on TBODY element. All other non-IE, non-Mozilla browsers */
+    /* induced side effect is that child TDs no longer accept width: auto                     */
+    html > body tbody.scrollContent {
+        display: block;
+        height: 262px;
+        overflow: auto;
+        width: 100%
+    }
+
+</style>
+
 <ion-view view-title="{{section.title}}">
     <ion-header-bar>
         <h1 class="title">{{section.title}}</h1>
