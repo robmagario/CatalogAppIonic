@@ -21,8 +21,7 @@ angular.module('catalog', ['ionic', 'catalog.controllers'])
             }
         });
     })
-
-    .config(function ($stateProvider, $httpProvider, $urlRouterProvider) {
+    .config(function ($stateProvider, $httpProvider, $urlRouterProvider,$sceDelegateProvider) {
         $stateProvider
             .state('cover', {
                 url: '/',

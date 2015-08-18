@@ -2,26 +2,42 @@
     <ion-header-bar>
         <h1 class="title">Cover</h1>
     </ion-header-bar>
-    <ion-content padding="True">
-        <div class="cover-page">
-        <div class="cover-text">
-        <h4 class="red company-name">ESC Pile</h4>
-            <img src="images/icon.png" id="ESCicon" alt="ESC icon">
-            <br>
-        <p>
-            <b><h2 class="red title">Product Catalogue 2015</h2></b>
-        </p>
-            <h4>Manufactured and Designed to ISO Certification</h4>
-        </div>
-            <img ng-swipe-left='testt()'
-        src="images/splash.png" class="maxSize" id="coverImg" alt="ESC cover">
+    <ion-content id="cover1" padding="True">
+        <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
+            <ion-slide>
+                <div class="cover1-page">
+                <div class="cover1-header">
+                <h4 class="red company-name">ESC Pile</h4>
+                    <img src="images/icon.png" id="ESCicon" alt="ESC icon">
+                    <br>
+                <p>
+                    <b><h2 class="red title">Product Catalogue 2015</h2></b>
+                </p>
+                    <h4>Manufactured and Designed to ISO Certification</h4>
+                </div>
+                    <img src="images/splash.png" class="maxSize" id="coverImg" alt="ESC cover">
+                    <p></p>
+                </div>
+            </ion-slide>
+
+            <ion-slide>
+                <div class="cover2-page">
+                <div class="cover2-header">
+                    <h2 class="red">Help</h2>
+                </div>
+                <div class="cover2-content">
+                    a<br>a<br>a<br>a<br>a<br>a<br>a<br>
+                    a<br>a<br>a<br>a<br>a<br>a<br>a<br>
+                    a<br>a<br>a<br>a<br>a<br>a<br>a<br>
+                    a<br>a<br>a<br>a<br>a<br>a<br>a<br>
+                    a<br>a<br>a<br>a<br>
+                </div>
+                </div>
+            </ion-slide>
+            <ion-slide>
+            </ion-slide>
+        </ion-slide-box>
             <!--<img ng-click="testt()" src="images/splash.png" class="maxSize" id="coverImg" alt="ESC cover">-->
-            <script id="slide1.html" type="text/ng-template">
-                <h1>1 Slide!</h1>
-            </script>
-            <script id="slide2.html" type="text/ng-template">
-                <h1>2 Slide!</h1>
-            </script>
-    </div>
+            <!--<iframe width="640" height="320" src="https://www.youtube.com/embed/ccKNpuYiNLE" frameborder="0" allowfullscreen></iframe>-->
     </ion-content>
 </ion-view>
