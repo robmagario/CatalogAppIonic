@@ -1,4 +1,17 @@
 var module = angular.module('catalog.controllers', [])
+    .controller('CoverCtrl', function ($scope, $state, $http, $ionicModal, $timeout) {
+        $http.get('http://escgroup.net/').then(function (res) {
+            $scope.categories = res.data;
+        }, function (err) {
+            console.error("HOME", err);
+        });
+
+        $scope.testt = function () {
+            $state.go('home');
+            $ionicHistory.clearHistory();
+            $ionicHistory.clearCache();
+        }
+    })
     .controller('HomeCtrl', function ($scope, $state, $http, $ionicModal, $timeout) {
         $http.get('http://escgroup.net/').then(function (res) {
             $scope.categories = res.data;

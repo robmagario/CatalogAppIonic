@@ -72,3 +72,38 @@
     -ms-flex-align: center !important;
     align-items: center !important;
 }
+ion-content{
+    background-color: #dddddd;
+}
+img{
+    height:auto;
+    width:auto;
+}
+.maxSize{
+    width:100%;
+}
+/*general css above*//*general css above*//*general css above*/
+
+.cover-page {
+    margin:0.8em;
+}
+.cover-text {
+    background-color: #ffffff;
+    padding: 1em 1em 2em 2em;
+    border-radius: 0 0 0 3em;
+}
+
+#ESCicon{
+    width: 6em;
+    position: absolute;
+    top: 1.1em;
+    right:2.1em;
+}
+#coverImg{
+    border-radius: 0 0 3em 0;
+}
+
+
+.red{
+    color:red;
+}

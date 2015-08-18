@@ -24,7 +24,11 @@ angular.module('catalog', ['ionic', 'catalog.controllers'])
 
     .config(function ($stateProvider, $httpProvider, $urlRouterProvider) {
         $stateProvider
-
+            .state('cover', {
+                url: '/',
+                templateUrl: 'templates/cover.html',
+                controller: 'CoverCtrl'
+            })
             .state('home', {
                 url: '/',
                 templateUrl: 'templates/home.html',
