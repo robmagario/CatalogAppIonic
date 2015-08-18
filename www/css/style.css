@@ -76,6 +76,7 @@ img{
     height:auto;
     width:auto;
     max-width:90%;
+    /*position: relative;*/
 }
 .maxSize{
     width:100%;

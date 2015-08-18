@@ -72,3 +72,56 @@
     -ms-flex-align: center !important;
     align-items: center !important;
 }
+img{
+    height:auto;
+    width:auto;
+    max-width:90%;
+    /*position: relative;*/
+}
+.maxSize{
+    width:100%;
+    max-width:100%;
+}
+ion-content{
+    background-color: #dddddd;
+}
+/*general css above*//*general css above*//*general css above*/
+
+
+.cover1-page {
+    margin:0.8em;
+}
+.cover1-header {
+    background-color: #ffffff;
+    padding: 1em 1em 2em 2em;
+    border-radius: 0 0 0 3em;
+}
+.cover2-page{
+    margin:0.8em;
+}
+
+.cover2-header{
+    background-color: #ffffff;
+    border-radius: 0 0 0 3em;
+    padding:3em;
+}
+.cover2-content{
+    background-color: #ffffff;
+    border-radius: 0 0 3em 0;
+
+}
+
+#ESCicon{
+    width: 6em;
+    position: absolute;
+    top: 2.1em;
+    right:2.1em;
+}
+#coverImg{
+    border-radius: 0 0 3em 0;
+}
+
+
+.red{
+    color:orangered;
+}
