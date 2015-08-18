@@ -75,9 +75,11 @@
 img{
     height:auto;
     width:auto;
+    max-width:90%;
 }
 .maxSize{
     width:100%;
+    max-width:100%;
 }
 ion-content{
     background-color: #dddddd;
