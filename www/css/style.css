@@ -110,7 +110,10 @@ ion-content{
     border-radius: 0 0 3em 0;
 
 }
-
+/*.row:nth-child(1) {*/
+.row:nth-of-type(odd) {
+    background: #aaaaaa;
+}
 #ESCicon{
     width: 6em;
     position: absolute;
