@@ -3,7 +3,7 @@
         <h1 class="title">Cover</h1>
     </ion-header-bar>
     <ion-content id="cover1" padding="True">
-        <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
+        <ion-slide-box show-pager="false" active-slide="coverSlide" on-slide-changed="slideHasChanged(index)">
             <ion-slide>
                 <div class="cover1-page">
                 <div class="cover1-header">
@@ -33,7 +33,5 @@
             <ion-slide>
             </ion-slide>
         </ion-slide-box>
-            <!--<img ng-click="testt()" src="images/splash.png" class="maxSize" id="coverImg" alt="ESC cover">-->
-            <!--<iframe width="640" height="320" src="https://www.youtube.com/embed/ccKNpuYiNLE" frameborder="0" allowfullscreen></iframe>-->
     </ion-content>
 </ion-view>
