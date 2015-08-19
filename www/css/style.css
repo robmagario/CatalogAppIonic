@@ -76,6 +76,9 @@ img{
     height:auto;
     width:auto;
     max-width:90%;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
     /*position: relative;*/
 }
 .maxSize{
@@ -83,10 +86,23 @@ img{
     max-width:100%;
 }
 ion-content{
-    background-color: #dddddd;
+    background-color: #ffffff;
 }
 /*general css above*//*general css above*//*general css above*/
 
+/*table>tr{*/
+    /*display : flex;*/
+    /*flex-flow: row;*/
+/*}*/
+/*table>td{*/
+    /*display : flex;*/
+    /*flex-flow: column;*/
+
+/*}*/
+
+.row .col {
+    border: 1px solid white;
+}
 
 .cover1-page {
     margin:0.8em;
@@ -110,10 +126,24 @@ ion-content{
     border-radius: 0 0 3em 0;
 
 }
-/*.row:nth-child(1) {*/
-.row:nth-of-type(odd) {
-    background: #aaaaaa;
+.row{
+    background-color: lightgray;
 }
+.row:nth-of-type(even) {
+color: red;
+}
+/*:nth-child(1)*/
+.row#header {
+    background-color:red;
+    color:white;
+}
+
+/*.row:nth-child~#header(4) {*/
+/*.row~#header{*/
+    /*color:blue;*/
+/*.row:nth-of-type(odd) {*/
+    /*background: red;*/
+/*}*/
 #ESCicon{
     width: 6em;
     position: absolute;
