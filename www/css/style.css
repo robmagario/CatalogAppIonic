@@ -72,6 +72,9 @@
     -ms-flex-align: center !important;
     align-items: center !important;
 }
+table,tr,td{
+    text-align: center !important;
+}
 img{
     height:auto;
     width:auto;
@@ -90,15 +93,25 @@ ion-content{
 }
 /*general css above*//*general css above*//*general css above*/
 
-/*table>tr{*/
-    /*display : flex;*/
-    /*flex-flow: row;*/
-/*}*/
-/*table>td{*/
-    /*display : flex;*/
-    /*flex-flow: column;*/
+table{
+    /*the head of table*/
+    background-color: #ff0000;
+    color:white;
+}
+ion-scroll table{
+    background-color: lightgray;
+    color:black;
+}
+tr,td{
+    border:0.1em solid #ffffff !important;
+}
+ion-scroll tr:nth-of-type(even) {
+    color: red;
+}
 
-/*}*/
+
+
+
 
 .row .col {
     border: 1px solid white;
@@ -132,7 +145,6 @@ ion-content{
 .row:nth-of-type(even) {
 color: red;
 }
-/*:nth-child(1)*/
 .container .row:nth-child(1){
     /*background-color:red;*/
     /*color:white;*/
@@ -141,13 +153,6 @@ color: red;
     background-color:red;
     color:white;
 }
-
-/*.row:nth-child~(4) {*/
-/*.row~#header{*/
-    /*color:blue;*/
-/*.row:nth-of-type(odd) {*/
-    /*background: red;*/
-/*}*/
 #ESCicon{
     width: 6em;
     position: absolute;
