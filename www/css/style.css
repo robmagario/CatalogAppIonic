@@ -133,12 +133,16 @@ ion-content{
 color: red;
 }
 /*:nth-child(1)*/
+.container .row:nth-child(1){
+    /*background-color:red;*/
+    /*color:white;*/
+}
 .row#header {
     background-color:red;
     color:white;
 }
 
-/*.row:nth-child~#header(4) {*/
+/*.row:nth-child~(4) {*/
 /*.row~#header{*/
     /*color:blue;*/
 /*.row:nth-of-type(odd) {*/
@@ -150,11 +154,11 @@ color: red;
     top: 2.1em;
     right:2.1em;
 }
-#coverImg{
+#coverImg,#cover2Img{
     border-radius: 0 0 3em 0;
 }
 
 
 .red{
-    color:orangered;
+    color:red;
 }
