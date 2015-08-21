@@ -30,7 +30,8 @@ var module = angular.module('catalog.controllers', [])
             }
 
             $scope.category = $stateParams.category;
-            $scope.sections = $scope.category.sections;
+            if ($scope.category != null)
+                $scope.sections = $scope.category.sections;
 
             $scope.selectSection = function ($section) {
                 $state.go('section', {section: $section});
@@ -45,11 +46,13 @@ var module = angular.module('catalog.controllers', [])
             }
             $scope.section = $stateParams.section;
 
-            $http.get('http://' + $scope.section.url).then(function (res) {
-                $scope.sectionData = res.data;
-            }, function (err) {
-                console.error("HOME", err);
-            });
+            if ($scope.section != null) {
+                $http.get('http://' + $scope.section.url).then(function (res) {
+                    $scope.sectionData = res.data;
+                }, function (err) {
+                    console.error("HOME", err);
+                });
+            }
 
             $scope.trustContent = function (html) {
                 return $sce.trustAsHtml(html);
