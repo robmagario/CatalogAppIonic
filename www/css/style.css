@@ -141,8 +141,21 @@ ion-scroll tr:nth-of-type(even) {
 
 }
 
+div.row.row-top > h4 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+}
+
+div.row.row-top {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 img.bordered {
     min-width: 100%;
+    height: 200px !important;
+    width: 300px !important;
     border: 3px solid black;
 }
 

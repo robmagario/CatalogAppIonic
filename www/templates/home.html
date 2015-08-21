@@ -3,13 +3,39 @@
         <h1 class="title">Home</h1>
     </ion-header-bar>
     <ion-content padding="True">
-        <div class="list card card-wrap" ng-repeat="category in categories" ng-click="selectCategory(category)">
-            <div class="item">
-                <h2>{{category.title}}</h2>
+        <div class="row responsive-lg" ng-repeat="category in categories"
+             ng-click="selectCategory(category)" ng-if="$index % 3 == 0">
+            <div class="col col-33">
+                <div class="row row-top">
+                    <h4>{{categories[$index].title}}</h4></div>
+
+                <div class="row row-bottom">
+                    <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
+                        <img class="bordered" ng-src="{{categories[$index].thumbnail}}">
+                    </div>
+                </div>
             </div>
 
-            <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
-                <img ng-src="{{category.thumbnail}}">
+            <div class="col col-33">
+                <div class="row row-top">
+                    <h4>{{categories[$index+1].title}}</h4></div>
+
+                <div class="row row-bottom">
+                    <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
+                        <img class="bordered" ng-src="{{categories[$index+1].thumbnail}}">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col col-33">
+                <div class="row row-top">
+                    <h4>{{categories[$index+2].title}}</h4></div>
+
+                <div class="row row-bottom">
+                    <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
+                        <img class="bordered" ng-src="{{categories[$index+2].thumbnail}}">
+                    </div>
+                </div>
             </div>
         </div>
     </ion-content>
