@@ -72,61 +72,70 @@
     -ms-flex-align: center !important;
     align-items: center !important;
 }
-table,tr,td{
+
+table, tr, td {
     text-align: center !important;
 }
-img{
-    height:auto;
-    width:auto;
-    max-width:90%;
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
+
+img {
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     /*position: relative;*/
 }
-.maxSize{
-    width:100%;
-    max-width:100%;
+
+.maxSize {
+    width: 100%;
+    max-width: 100%;
 }
-ion-content{
+
+ion-content {
     background-color: #ffffff;
 }
+
 /*general css above*//*general css above*//*general css above*/
 
-table{
+table {
     /*the head of table*/
     background-color: #ff0000;
-    color:white;
+    color: white;
 }
-ion-scroll table{
+
+ion-scroll table {
     background-color: lightgray;
-    color:black;
+    color: black;
 }
-tr,td{
-    border:0.1em solid #ffffff !important;
+
+tr, td {
+    border: 0.1em solid #ffffff !important;
 }
+
 ion-scroll tr:nth-of-type(even) {
     color: red;
 }
 
 .cover1-page {
-    margin:0.8em;
+    margin: 0.8em;
 }
+
 .cover1-header {
     background-color: #ffffff;
     padding: 1em 1em 2em 2em;
     border-radius: 0 0 0 3em;
 }
-.cover2-page{
-    margin:0.8em;
+
+.cover2-page {
+    margin: 0.8em;
 }
 
-.cover2-header{
+.cover2-header {
     background-color: #ffffff;
     border-radius: 0 0 0 3em;
-    padding:3em;
+    padding: 3em;
 }
-.cover2-content{
+
+.cover2-content {
     background-color: #ffffff;
     border-radius: 0 0 3em 0;
 
@@ -137,17 +146,17 @@ img.bordered {
     border: 3px solid black;
 }
 
-#ESCicon{
+#ESCicon {
     width: 6em;
     position: absolute;
     top: 2.1em;
-    right:2.1em;
+    right: 2.1em;
 }
-#coverImg,#cover2Img{
+
+#coverImg, #cover2Img {
     border-radius: 0 0 3em 0;
 }
 
-
-.red{
-    color:red;
+.red {
+    color: red;
 }
