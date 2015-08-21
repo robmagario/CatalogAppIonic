@@ -109,14 +109,6 @@ ion-scroll tr:nth-of-type(even) {
     color: red;
 }
 
-
-
-
-
-.row .col {
-    border: 1px solid white;
-}
-
 .cover1-page {
     margin:0.8em;
 }
@@ -139,20 +131,12 @@ ion-scroll tr:nth-of-type(even) {
     border-radius: 0 0 3em 0;
 
 }
-.row{
-    background-color: lightgray;
+
+img.bordered {
+    min-width: 100%;
+    border: 3px solid black;
 }
-.row:nth-of-type(even) {
-color: red;
-}
-.container .row:nth-child(1){
-    /*background-color:red;*/
-    /*color:white;*/
-}
-.row#header {
-    background-color:red;
-    color:white;
-}
+
 #ESCicon{
     width: 6em;
     position: absolute;

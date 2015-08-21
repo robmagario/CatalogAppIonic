@@ -4,9 +4,42 @@
     </ion-header-bar>
     <ion-content padding="True">
         <ion-list>
-            <ion-item ng-repeat="section in sections" ng-click="selectSection(section)">
-                {{section.title}}
-            </ion-item>
+            <div class="row responsive-sm esc-category-item" ng-repeat="section in sections" ng-if="$index % 3 == 0">
+                <div class="col col-33" ng-click="selectSection(sections[$index])">
+                    <div class="row row-top">
+                        <img class="bordered" src="http://placehold.it/300x200"/>
+                    </div>
+
+                    <div class="row row-bottom">
+                        <p>{{sections[$index].title}}</p>
+                    </div>
+
+                </div>
+                <div class="col col-33" ng-click="selectSection(sections[$index + 1])">
+
+                    <div class="row row-top">
+                        <img class="bordered" src="http://placehold.it/300x200"/>
+                    </div>
+
+                    <div class="row row-bottom">
+                        <p>{{sections[$index + 1].title}}</p>
+                    </div>
+                </div>
+                <div class="col col-33" ng-click="selectSection(sections[$index + 2])">
+
+                    <div class="row row-top">
+                        <img class="bordered" src="http://placehold.it/300x200"/>
+                    </div>
+
+                    <div class="row row-bottom">
+                        <p>{{sections[$index + 2].title}}</p>
+                    </div>
+
+                </div>
+            </div>
+            <!--<ion-item ng-repeat="section in sections" ng-click="selectSection(section)">-->
+            <!--{{section.title}}-->
+            <!--</ion-item>-->
         </ion-list>
     </ion-content>
 </ion-view>
