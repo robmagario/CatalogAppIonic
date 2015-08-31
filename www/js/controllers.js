@@ -8,14 +8,25 @@ var module = angular.module('catalog.controllers', [])
                     }, 300);
                 }
             }
+
         })
-        .controller('HomeCtrl', function ($scope, $state, $http, $ionicModal, $timeout) {
+        .controller('HomeCtrl', function ($scope, $state, $http,$ionicScrollDelegate, $ionicModal, $timeout) {
             $http.get('http://escgroup.net/').then(function (res) {
                 $scope.categories = res.data;
             }, function (err) {
                 console.error("HOME", err);
             });
-
+            $scope.slideHasChanged = function (index) {
+                if (index == 1) {
+                    $ionicScrollDelegate.scrollTop();
+                }
+                if (index == 2) {
+                    //Object {title: "Z Hot Rolled Sheet Piles", page: 9, url:
+                    // "escgroup.net/esc-hot-rolled-sheet-piles/z-hot-rolled-sheet-piles/", $$hashKey: "object:43"}
+                    $state.go('home');
+                    //$state.go('section', {section: $section});
+                }
+            }
             $scope.selectCategory = function ($category) {
                 $state.go('category', {category: $category});
             }
@@ -28,12 +39,12 @@ var module = angular.module('catalog.controllers', [])
                 $ionicHistory.clearHistory();
                 $ionicHistory.clearCache();
             }
-
             $scope.category = $stateParams.category;
             if ($scope.category != null)
                 $scope.sections = $scope.category.sections;
 
             $scope.selectSection = function ($section) {
+                console.log($section);
                 $state.go('section', {section: $section});
             }
         })
@@ -45,10 +56,12 @@ var module = angular.module('catalog.controllers', [])
                 $ionicHistory.clearCache();
             }
             $scope.section = $stateParams.section;
-
             if ($scope.section != null) {
                 $http.get('http://' + $scope.section.url).then(function (res) {
+                    //console.log('http://' + $scope.section.url);
                     $scope.sectionData = res.data;
+                    //console.log('section: ',$scope.section);
+                    //console.log('hashkey: ',$scope.section.$$hashKey);
                 }, function (err) {
                     console.error("HOME", err);
                 });

@@ -3,40 +3,51 @@
         <h1 class="title">Home</h1>
     </ion-header-bar>
     <ion-content padding="True">
-        <div class="row responsive-lg" ng-repeat="category in categories"
-             ng-click="selectCategory(category)" ng-if="$index % 3 == 0">
-            <div class="col col-33">
-                <div class="row row-top">
-                    <h4>{{categories[$index].title}}</h4></div>
+         <ion-slide-box show-pager="false" active-slide="coverSlide" on-slide-changed="slideHasChanged(index)">
+             <ion-slide>
 
-                <div class="row row-bottom">
-                    <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
-                        <img class="bordered" ng-src="{{categories[$index].thumbnail}}">
+                <div class="row responsive-lg" ng-repeat="category in categories"
+                 ng-click="selectCategory(category)" ng-if="$index % 3 == 0">
+                <div class="col col-33">
+                    <div class="row row-top">
+                        <h4>{{categories[$index].title}}</h4></div>
+
+                    <div class="row row-bottom">
+                        <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
+                            <img class="bordered" ng-src="{{categories[$index].thumbnail}}">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col col-33">
+                    <div class="row row-top">
+                        <h4>{{categories[$index+1].title}}</h4></div>
+
+                    <div class="row row-bottom">
+                        <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
+                            <img class="bordered" ng-src="{{categories[$index+1].thumbnail}}">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col col-33">
+                    <div class="row row-top">
+                        <h4>{{categories[$index+2].title}}</h4></div>
+
+                    <div class="row row-bottom">
+                        <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
+                            <img class="bordered" ng-src="{{categories[$index+2].thumbnail}}">
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col col-33">
-                <div class="row row-top">
-                    <h4>{{categories[$index+1].title}}</h4></div>
-
-                <div class="row row-bottom">
-                    <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
-                        <img class="bordered" ng-src="{{categories[$index+1].thumbnail}}">
-                    </div>
-                </div>
-            </div>
-
-            <div class="col col-33">
-                <div class="row row-top">
-                    <h4>{{categories[$index+2].title}}</h4></div>
-
-                <div class="row row-bottom">
-                    <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
-                        <img class="bordered" ng-src="{{categories[$index+2].thumbnail}}">
-                    </div>
-                </div>
-            </div>
-        </div>
+             </ion-slide>
+             <ion-slide class="slideHeight">
+                 <img src="images/Uses of Piles.jpg" class="maxSize1" id="usesPile1Img" alt="ESC cover">
+             </ion-slide>
+             <ion-slide>
+             </ion-slide>
+            </ion-slide-box>
     </ion-content>
 </ion-view>
