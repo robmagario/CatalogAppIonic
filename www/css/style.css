@@ -158,10 +158,6 @@ tbody tr:nth-of-type(even){
     border-radius: 0 0 0 3em;
 }
 
-.cover2-page {
-    margin: 0.8em;
-}
-
 .cover2-header {
     background-color: #ffffff;
     border-radius: 0 0 0 3em;
@@ -200,6 +196,15 @@ img.bordered {
 #coverImg, #cover2Img {
     border-radius: 0 0 3em 0;
 }
+.cover2-page .row .col{
+    border:0;
+}
+
+
+/*.row .col {*/
+    /*border: 1px solid white;*/
+/*}*/
+
 
 .red {
     color: #9d0420;
@@ -217,12 +222,19 @@ table{
     width:auto !important;
 }
 
-.col:nth-child(1){
+/*.col:nth-child(1){*/
     /*background-color: orangered;*/
-}
-.col:nth-child(2){
+/*}*/
+/*.col:nth-child(2){*/
     /*background-color: yellow;*/
-}
-.col:nth-child(3){
+/*}*/
+/*.col:nth-child(3){*/
     /*background-color: pink;*/
+/*}*/
+.vh100{
+    /*visibility: hidden;*/
+    height:100vh;
+}
+.vh50{
+    height:48vh;
 }
