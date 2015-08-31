@@ -28,6 +28,7 @@ var module = angular.module('catalog.controllers', [])
                 }
             }
             $scope.selectCategory = function ($category) {
+                console.log('test',$category);
                 $state.go('category', {category: $category});
             }
 
