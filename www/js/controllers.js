@@ -24,8 +24,7 @@ var module = angular.module('catalog.controllers', [])
                     //Object {title: "Z Hot Rolled Sheet Piles", page: 9, url:
                     // "escgroup.net/esc-hot-rolled-sheet-piles/z-hot-rolled-sheet-piles/", $$hashKey: "object:43"}
                     $state.go('home');
-                    console.log('here');
-                    //$state.go('section', {section: $section});
+                    //console.log('here');
                 }
             }
             $scope.selectCategory = function ($category) {
