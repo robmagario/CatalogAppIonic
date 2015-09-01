@@ -89,7 +89,9 @@ img {
     width: 95%;
     max-width: 100%;
 }
-
+head,body{
+    word-break: break-all;
+}
 ion-content {
     background-color: #ffffff;
 }
@@ -170,7 +172,6 @@ div> h4 {
     /*text-overflow: ellipsis;*/
     /*white-space: nowrap;*/
     font-size: 14px;
-    word-break: break-all;
     color:orange;
 }
 
