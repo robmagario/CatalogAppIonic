@@ -1,16 +1,16 @@
 <ion-view view-title="Content">
-    <img id="unknownNewIcon" src="http://www.scrabble.org.nz/splash-new.gif">
     <ion-nav-bar class="headerBar">
         <!--<h1 class="title">Home</h1>-->
         <!--<button class="icon button-clear"><img id="unknownNewIcon" src="http://www.scrabble.org.nz/splash-new.gif"></button>-->
         <!--<ion-nav-buttons side="right">-->
             <!--<button class="button-icon" >-->
-                <!--<img id="unknownNewIcon" src="http://www.scrabble.org.nz/splash-new.gif">-->
-                <!--<img id="tapPreviewIcon" src="http://www.scrabble.org.nz/splash-new.gif">-->
+                <img id="unknownNewIcon" src="http://www.scrabble.org.nz/splash-new.gif">
+                <img id="tapHereIcon" src="/images/tapHereIcon.jpg">
             <!--</button>-->
         <!--</ion-nav-buttons>-->
     </ion-nav-bar>
     <ion-content padding="True" class="topSpace">
+        <ion-slide-box show-pager="false" active-slide="coverSlide" on-slide-changed="slideHasChanged(index)">
              <ion-slide>
                  <div class="row responsive-mg item-text-wrap" ng-repeat="category in categories"
                  ng-if="$index % 4 == 0">
@@ -20,7 +20,7 @@
 
                     <div class="row row-bottom">
                         <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
-                            <img class="bordered" ng-src="{{categories[$index].thumbnail}}">
+                            <img class="bordered" ng-src="http://{{categories[$index].thumbnail}}">
                         </div>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
 
                     <div class="row row-bottom">
                         <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
-                            <img class="bordered" ng-src="{{categories[$index+1].thumbnail}}">
+                            <img class="bordered" ng-src="http://{{categories[$index+1].thumbnail}}">
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
 
                     <div class="row row-bottom">
                         <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
-                            <img class="bordered" ng-src="{{categories[$index+2].thumbnail}}">
+                            <img class="bordered" ng-src="http://{{categories[$index+2].thumbnail}}">
                         </div>
                     </div>
                 </div>
@@ -53,18 +53,18 @@
 
                     <div class="row row-bottom">
                         <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
-                            <img class="bordered" ng-src="{{categories[$index+3].thumbnail}}">
+                            <img class="bordered" ng-src="http://{{categories[$index+3].thumbnail}}">
                         </div>
                     </div>
                 </div>
             </div>
 
              </ion-slide>
-             <ion-slide class="slideHeight">
+             <ion-slide>
                  <img src="images/Uses of Piles.jpg" class="maxSize1" id="usesPile1Img" alt="ESC cover">
              </ion-slide>
-             <ion-slide>
-             </ion-slide>
-            </ion-slide-box>
+             <!--<ion-slide>-->
+             <!--</ion-slide>-->
+        </ion-slide-box>
     </ion-content>
 </ion-view>

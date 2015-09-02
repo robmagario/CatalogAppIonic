@@ -45,7 +45,7 @@ var module = angular.module('catalog.controllers', [])
                 $scope.sections = $scope.category.sections;
 
             $scope.selectSection = function ($section) {
-                console.log($section);
+                //console.log($section);
                 $state.go('section', {section: $section});
             }
         })

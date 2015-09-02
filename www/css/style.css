@@ -167,11 +167,8 @@ tbody tr:nth-of-type(even){
 
 div> h4 {
     width:100%;
-    /*text-overflow: ellipsis;*/
-    /*white-space: nowrap;*/
-    font-size: 14px;
+    font-size: 1em;
     /*word-break: break-all;*/
-    /*color:orange;*/
 }
 
 img.bordered {
@@ -193,7 +190,7 @@ img.bordered {
 }
 
 .headerBar{
-    /*height:15em !important;*/
+    height:30vh !important;
 }
 .topSpace{
     top:30vh !important;
@@ -202,8 +199,22 @@ img.bordered {
 #unknownNewIcon{
     position: absolute;
     right:20vw;
-    top:15vh;
+    top:10vh;
     height:auto;
+    z-index: 999;
+}
+#tapHereIcon{
+    position: absolute;
+    top:15vh;
+    left:40%;
+    width:20%;
+    height:auto;
+    /*right:50%;*/
+    /*clear: both;*/
+    /*height:auto;*/
+    /*left: 50%;*/
+    /*margin-right: -50%;*/
+    z-index: 999;
 }
 
 .red {
