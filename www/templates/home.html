@@ -1,15 +1,18 @@
 <ion-view view-title="Content">
+    <img id="unknownNewIcon" src="http://www.scrabble.org.nz/splash-new.gif">
     <ion-nav-bar class="headerBar">
-        <h1 class="title">Home</h1>
-        <ion-nav-buttons side="right">
-            <button class="button-icon" ><img id="unknownNewIcon" src="http://www.scrabble.org.nz/splash-new.gif"></button>
-
-        </ion-nav-buttons>
+        <!--<h1 class="title">Home</h1>-->
+        <!--<button class="icon button-clear"><img id="unknownNewIcon" src="http://www.scrabble.org.nz/splash-new.gif"></button>-->
+        <!--<ion-nav-buttons side="right">-->
+            <!--<button class="button-icon" >-->
+                <!--<img id="unknownNewIcon" src="http://www.scrabble.org.nz/splash-new.gif">-->
+                <!--<img id="tapPreviewIcon" src="http://www.scrabble.org.nz/splash-new.gif">-->
+            <!--</button>-->
+        <!--</ion-nav-buttons>-->
     </ion-nav-bar>
     <ion-content padding="True" class="topSpace">
-         <ion-slide-box show-pager="false" active-slide="coverSlide" on-slide-changed="slideHasChanged(index)">
              <ion-slide>
-                <div class="row responsive-mg" ng-repeat="category in categories"
+                 <div class="row responsive-mg item-text-wrap" ng-repeat="category in categories"
                  ng-if="$index % 4 == 0">
                 <div class="col col-25"  ng-click="selectCategory(categories[$index])">
                     <div class="row row-top">
