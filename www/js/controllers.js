@@ -11,6 +11,7 @@ var module = angular.module('catalog.controllers', [])
 
         })
         .controller('HomeCtrl', function ($scope, $state, $http,$ionicScrollDelegate, $ionicModal, $timeout) {
+            //$http.get('http://www.joronoko.com/').then(function (res) {
             $http.get('http://escgroup.net/').then(function (res) {
                 $scope.categories = res.data;
             }, function (err) {

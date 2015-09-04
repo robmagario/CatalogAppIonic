@@ -10,7 +10,7 @@
                         <h4>{{sections[$index].title}}</h4>
                     </div>
                     <div class="row row-bottom">
-                        <img class="bordered" ng-src="http://{{categories[$index].images}}">
+                        <img class="bordered" ng-src="http://{{sections[$index].images}}">
                     </div>
 
                 </div>
@@ -21,7 +21,7 @@
                         <h4>{{sections[$index + 1].title}}</h4>
                     </div>
                     <div class="row row-bottom">
-                        <img class="bordered" ng-src="http://{{categories[$index+1].thumbnail}}"/>
+                        <img class="bordered" ng-src="http://{{sections[$index+1].images}}"/>
                     </div>
 
                 </div>
@@ -31,7 +31,7 @@
                         <h4>{{sections[$index + 2].title}}</h4>
                     </div>
                     <div class="row row-bottom">
-                        <img class="bordered" ng-src="{{categories[$index+2].thumbnail}}"/>
+                        <img class="bordered" ng-src="http://{{sections[$index+2].images}}"/>
                     </div>
 
                 </div>
