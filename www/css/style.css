@@ -182,11 +182,29 @@ img.bordered {
     margin:0em;
 }
 
-#coverImg, #cover2Img,#usesPile1Img {
+#cover2Img, #cover3Img, #cover4Img,#usesPile1Img {
     /*border-radius: 0 0 3em 0;*/
     box-shadow: -20px 20px 8px #888888;
     margin: 0 1em;
     height:auto;
+}
+#usesPile1Img{
+    /*visibility: hidden;*/
+}
+#coverImg{
+    box-shadow: -20px 20px 8px #888888;
+    margin: 0 1em;
+    height:90%;
+}
+#cover2Img, #cover3Img, #cover4Img{
+    width:90%;
+    height:auto;
+}
+@media screen and (orientation:portrait) {
+    #cover2Img, #cover3Img, #cover4Img{
+        height:90%;
+        width:80%;
+    }
 }
 
 .headerBar{
@@ -206,15 +224,19 @@ img.bordered {
 #tapHereIcon{
     position: absolute;
     top:15vh;
-    left:40%;
-    width:20%;
+    left:35%;
+    width:30%;
     height:auto;
-    /*right:50%;*/
-    /*clear: both;*/
-    /*height:auto;*/
-    /*left: 50%;*/
-    /*margin-right: -50%;*/
+    font-size: 1.5em;
     z-index: 999;
+}
+@media only screen and (max-width: 768px) {
+    #tapHereIcon{
+        left:30%;
+        width:40%;
+        font-size: 1.2em;
+        line-height:1em;
+    }
 }
 
 .red {
@@ -242,10 +264,3 @@ table{
 /*.col:nth-child(3){*/
     /*background-color: pink;*/
 /*}*/
-.vh100{
-    /*visibility: hidden;*/
-    height:95%;
-}
-.vh50{
-    height:45%;
-}

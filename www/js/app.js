@@ -11,6 +11,7 @@ function shouldRotateToOrientation(degrees) {
 angular.module('catalog', ['ionic', 'catalog.controllers'])
 
     .run(function ($ionicPlatform) {
+        ionic.Platform.isFullScreen = true;
         $ionicPlatform.ready(function () {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)

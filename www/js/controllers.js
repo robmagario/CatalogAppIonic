@@ -1,16 +1,21 @@
 var module = angular.module('catalog.controllers', [])
-        .controller('CoverCtrl', function ($scope, $state, $ionicHistory, $ionicSlideBoxDelegate, $timeout) {
+        .controller('CoverCtrl', function ($scope, $state, $ionicHistory,$ionicScrollDelegate, $ionicSlideBoxDelegate, $timeout) {
             $scope.slideHasChanged = function (index) {
+                $ionicScrollDelegate.scrollTop();
                 if (index == 2) {
                     $state.go('home');
                     $timeout(function () {
                         $ionicSlideBoxDelegate.slide(0, 0);
-                    }, 300);
+                    }, 10);
                 }
+                $timeout( function() {
+                    //$ionicScrollDelegate.resize();
+                    //angular.element($window).triggerHandler('resize');
+                    //console.log('resize');
+                }, 100);
             }
-
         })
-        .controller('HomeCtrl', function ($scope, $state, $http,$ionicScrollDelegate, $ionicModal, $timeout) {
+        .controller('HomeCtrl', function ($scope, $state, $http,$ionicSlideBoxDelegate,$ionicScrollDelegate, $ionicModal, $timeout) {
             //$http.get('http://www.joronoko.com/').then(function (res) {
             $http.get('http://escgroup.net/').then(function (res) {
                 $scope.categories = res.data;
@@ -20,12 +25,16 @@ var module = angular.module('catalog.controllers', [])
             $scope.slideHasChanged = function (index) {
                 if (index == 1) {
                     $ionicScrollDelegate.scrollTop();
+                    $ionicScrollDelegate.resize();
+                    console.log(document.getElementById('usesPile1Img'));
+                    document.getElementById('usesPile1Img').display='none';
+                    //$("#usesPile1Img").visibility;
                 }
                 if (index == 2) {
-                    //Object {title: "Z Hot Rolled Sheet Piles", page: 9, url:
-                    // "escgroup.net/esc-hot-rolled-sheet-piles/z-hot-rolled-sheet-piles/", $$hashKey: "object:43"}
-                    $state.go('home');
-                    //console.log('here');
+                    console.log('here');
+                    var _firstSection={url:
+                        "escgroup.net/esc-hot-rolled-sheet-piles/z-hot-rolled-sheet-piles/"};
+                    $state.go('section', {section:_firstSection});
                 }
             }
             $scope.selectCategory = function ($category) {
@@ -46,7 +55,7 @@ var module = angular.module('catalog.controllers', [])
                 $scope.sections = $scope.category.sections;
 
             $scope.selectSection = function ($section) {
-                //console.log($section);
+                console.log($section);
                 $state.go('section', {section: $section});
             }
         })
