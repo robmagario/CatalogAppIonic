@@ -13,7 +13,6 @@
                         <img class="bordered" ng-src="http://{{sections[$index].images}}">
                     </div>
                 </div>
-                <!--ng-src="{{categories[$index+1].thumbnail}}"-->
                 <div class="col col-33" ng-click="selectSection(sections[$index + 1])"
                      ng-if="$index + 1 < sections.length">
                     <div class="row row-top">
@@ -35,11 +34,6 @@
 
                 </div>
             </div>
-
-
-            <!--<ion-item ng-repeat="section in sections" ng-click="selectSection(section)">-->
-            <!--{{section.title}}-->
-            <!--</ion-item>-->
         </ion-list>
     </ion-content>
 </ion-view>

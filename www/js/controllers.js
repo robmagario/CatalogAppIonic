@@ -6,11 +6,10 @@ var module = angular.module('catalog.controllers', [])
                     $state.go('home');
                     $timeout(function () {
                         $ionicSlideBoxDelegate.slide(0, 0);
-                    }, 10);
+                    }, 300);
                 }
                 $timeout( function() {
                     //$ionicScrollDelegate.resize();
-                    //angular.element($window).triggerHandler('resize');
                     //console.log('resize');
                 }, 100);
             }
@@ -25,10 +24,8 @@ var module = angular.module('catalog.controllers', [])
             $scope.slideHasChanged = function (index) {
                 if (index == 1) {
                     $ionicScrollDelegate.scrollTop();
-                    $ionicScrollDelegate.resize();
-                    console.log(document.getElementById('usesPile1Img'));
-                    document.getElementById('usesPile1Img').display='none';
-                    //$("#usesPile1Img").visibility;
+                    //$ionicScrollDelegate.resize();
+                    $scope.usesPileShow=true;
                 }
                 if (index == 2) {
                     console.log('here');
@@ -38,7 +35,6 @@ var module = angular.module('catalog.controllers', [])
                 }
             }
             $scope.selectCategory = function ($category) {
-                //console.log('test',$category);
                 $state.go('category', {category: $category});
             }
 
@@ -69,10 +65,7 @@ var module = angular.module('catalog.controllers', [])
             $scope.section = $stateParams.section;
             if ($scope.section != null) {
                 $http.get('http://' + $scope.section.url).then(function (res) {
-                    //console.log('http://' + $scope.section.url);
                     $scope.sectionData = res.data;
-                    //console.log('section: ',$scope.section);
-                    //console.log('hashkey: ',$scope.section.$$hashKey);
                 }, function (err) {
                     console.error("HOME", err);
                 });
