@@ -1,68 +1,114 @@
-<ion-view view-title="Content">
-    <ion-nav-bar class="headerBar">
-        <img id="unknownNewIcon" src="http://www.scrabble.org.nz/splash-new.gif">
-            <button id="tapHereIcon" class="button button-assertive">
-                Tap the preview to navigate to the article
-            </button>
-    </ion-nav-bar>
-    <ion-content padding="True" class="topSpace">
-        <ion-slide-box show-pager="false" active-slide="coverSlide" on-slide-changed="slideHasChanged(index)">
-             <ion-slide>
-                 <div class="row responsive-mg item-text-wrap" ng-repeat="category in categories"
-                 ng-if="$index % 4 == 0">
-                <div class="col col-25"  ng-click="selectCategory(categories[$index])">
-                    <div class="row row-top">
-                        <h4>{{categories[$index].title}}</h4></div>
+<ion-view hide-nav-bar="true">
+    <ion-content padding="True">
+        <ion-slide-box show-pager="false">
+            <ion-slide>
+                <div class="row">
+                    <div class="col">
+                        <div class="cover1-header">
+                            <img src="images/icon.png" id="ESCicon" alt="ESC icon">
 
-                    <div class="row row-bottom">
-                        <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
-                            <img class="bordered" ng-src="http://{{categories[$index].thumbnail}}">
+                            <p>
+                                <b><h2 class="red title">PILING SOLUTIONS</h2></b>
+                            </p>
+                            <h4>Manufactured and Designed to ISO Certification</h4>
+                        </div>
+                        <div class="chop1">
+                            <img src="images/splash.png" class="fullScreenImage" id="coverImg" alt="ESC cover">
                         </div>
                     </div>
                 </div>
+            </ion-slide>
+            <ion-slide>
+                <div class="row">
+                    <div class="col">
 
-                <div class="col col-25" ng-click="selectCategory(categories[$index + 1])">
-                    <div class="row row-top">
-                        <h4>{{categories[$index+1].title}}</h4></div>
+                        <b><h2 class="red title">HELP</h2></b>
 
-                    <div class="row row-bottom">
-                        <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
-                            <img class="bordered" ng-src="http://{{categories[$index+1].thumbnail}}">
+                        <div class="row">
+                            <div class="col col-33">
+                                <img src="images/help-info2a.jpg" id="cover2Img" alt="ESC cover">
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col">
+                                        <img src="images/help-info2b.jpg" id="cover3Img" alt="ESC cover">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <img src="images/help-info2c.jpg" id="cover4Img" alt="ESC cover">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </ion-slide>
+            <ion-slide>
+                <div class="headerBar">
+                    <img id="unknownNewIcon" src="http://www.scrabble.org.nz/splash-new.gif">
+                    <button id="tapHereIcon" class="button button-assertive">
+                        Tap the preview to navigate to the article
+                    </button>
+                </div>
+                <div class="row responsive-sm item-text-wrap" ng-repeat="category in categories"
+                     ng-if="$index % 4 == 0">
+                    <div class="col col-25" ng-click="selectCategory(categories[$index])">
+                        <div class="row row-top">
+                            <h4>{{categories[$index].title}}</h4><br/></div>
 
-                <div class="col col-25"  ng-click="selectCategory(categories[$index + 2])">
-                    <div class="row row-top">
-                        <h4>{{categories[$index+2].title}}</h4></div>
-
-                    <div class="row row-bottom">
-                        <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
-                            <img class="bordered" ng-src="http://{{categories[$index+2].thumbnail}}">
+                        <div class="row row-bottom">
+                            <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
+                                <img class="bordered" ng-src="http://{{categories[$index].thumbnail}}">
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col col-25"  ng-click="selectCategory(categories[$index + 3])">
-                    <div class="row row-top">
-                        <h4>{{categories[$index+3].title}}</h4></div>
+                    <div class="col col-25" ng-click="selectCategory(categories[$index + 1])">
+                        <div class="row row-top">
+                            <h4>{{categories[$index+1].title}}</h4></div>
 
-                    <div class="row row-bottom">
-                        <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
-                            <img class="bordered" ng-src="http://{{categories[$index+3].thumbnail}}">
+                        <div class="row row-bottom">
+                            <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
+                                <img class="bordered" ng-src="http://{{categories[$index+1].thumbnail}}">
+                            </div>
                         </div>
                     </div>
+
+                    <div class="col col-25" ng-click="selectCategory(categories[$index + 2])">
+                        <div class="row row-top">
+                            <h4>{{categories[$index+2].title}}</h4></div>
+
+                        <div class="row row-bottom">
+                            <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
+                                <img class="bordered" ng-src="http://{{categories[$index+2].thumbnail}}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col col-25" ng-click="selectCategory(categories[$index + 3])">
+                        <div class="row row-top">
+                            <h4>{{categories[$index+3].title}}</h4></div>
+
+                        <div class="row row-bottom">
+                            <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
+                                <img class="bordered" ng-src="http://{{categories[$index+3].thumbnail}}">
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
 
-             </ion-slide>
+            </ion-slide>
 
-             <ion-slide>
-                 <img src="images/Uses of Piles.jpg" ng-show="usesPileShow" class="maxSize1" id="usesPile1Img" alt="ESC cover">
-             </ion-slide>
-
-             <ion-slide>
-             </ion-slide>
+            <ion-slide>
+                <div class="row">
+                    <div class="col">
+                        <img src="images/Uses of Piles.jpg" class="fullScreenImage" id="usesPile1Img"
+                             alt="ESC cover">
+                    </div>
+                </div>
+            </ion-slide>
         </ion-slide-box>
     </ion-content>
 </ion-view>
