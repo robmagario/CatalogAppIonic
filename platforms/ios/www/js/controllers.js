@@ -1,56 +1,101 @@
-angular.module('starter.controllers', [])
+var module = angular.module('catalog.controllers', [])
+        .controller('CoverCtrl', function ($scope, $state, $ionicHistory,$ionicScrollDelegate, $ionicSlideBoxDelegate, $timeout) {
+            $scope.slideHasChanged = function (index) {
+                $ionicScrollDelegate.scrollTop();
+                if (index == 2) {
+                    $state.go('home');
+                    $timeout(function () {
+                        $ionicSlideBoxDelegate.slide(0, 0);
+                    }, 300);
+                }
+                $timeout( function() {
+                    //$ionicScrollDelegate.resize();
+                    //console.log('resize');
+                }, 100);
+            }
+        })
+        .controller('HomeCtrl', function ($scope, $state, $http,$ionicSlideBoxDelegate,$ionicScrollDelegate, $ionicModal, $timeout) {
+            //$http.get('http://www.joronoko.com/').then(function (res) {
+            $http.get('http://escgroup.net/').then(function (res) {
+                $scope.categories = res.data;
+            }, function (err) {
+                console.error("HOME", err);
+            });
+            $scope.slideHasChanged = function (index) {
+                if (index == 1) {
+                    $ionicScrollDelegate.scrollTop();
+                    //$ionicScrollDelegate.resize();
+                    $scope.usesPileShow=true;
+                }
+                if (index == 2) {
+                    console.log('here');
+                    var _firstSection={url:
+                        "escgroup.net/esc-hot-rolled-sheet-piles/z-hot-rolled-sheet-piles/"};
+                    $state.go('section', {section:_firstSection});
+                }
+            }
+            $scope.selectCategory = function ($category) {
+                $state.go('category', {category: $category});
+            }
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+        })
 
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
+        .controller('CategoryCtrl', function ($scope, $state, $ionicHistory, $stateParams, $http, $ionicModal, $timeout) {
+            if ($stateParams.category == null) {
+                $state.go('home');
+                $ionicHistory.clearHistory();
+                $ionicHistory.clearCache();
+            }
+            $scope.category = $stateParams.category;
+            if ($scope.category != null)
+                $scope.sections = $scope.category.sections;
 
-  // Form data for the login modal
-  $scope.loginData = {};
+            $scope.selectSection = function ($section) {
+                console.log($section);
+                $state.go('section', {section: $section});
+            }
+        })
 
-  // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('templates/login.html', {
-    scope: $scope
-  }).then(function(modal) {
-    $scope.modal = modal;
-  });
+        .controller('SectionCtrl', function ($scope, $ionicHistory, $compile, $sce, $state, $stateParams, $http, $ionicModal, $timeout) {
+            if ($stateParams.section == null) {
+                $state.go('home');
+                $ionicHistory.clearHistory();
+                $ionicHistory.clearCache();
+            }
+            $scope.section = $stateParams.section;
+            if ($scope.section != null) {
+                $http.get('http://' + $scope.section.url).then(function (res) {
+                    $scope.sectionData = res.data;
+                }, function (err) {
+                    console.error("HOME", err);
+                });
+            }
 
-  // Triggered in the login modal to close it
-  $scope.closeLogin = function() {
-    $scope.modal.hide();
-  };
+            $scope.trustContent = function (html) {
+                return $sce.trustAsHtml(html);
+            };
+        })
 
-  // Open the login modal
-  $scope.login = function() {
-    $scope.modal.show();
-  };
+        .directive('bindHtmlCompile', ['$compile', function ($compile) {
+            return {
+                restrict: 'A',
+                link: function (scope, element, attrs) {
+                    scope.$watch(function () {
+                        return scope.$eval(attrs.bindHtmlCompile);
+                    }, function (value) {
+                        // Incase value is a TrustedValueHolderType, sometimes it
+                        // needs to be explicitly called into a string in order to
+                        // get the HTML string.
+                        element.html(value && value.toString());
+                        // If scope is provided use it, otherwise use parent scope
+                        var compileScope = scope;
+                        if (attrs.bindHtmlScope) {
+                            compileScope = scope.$eval(attrs.bindHtmlScope);
+                        }
+                        $compile(element.contents())(compileScope);
+                    });
+                }
+            };
+        }])
 
-  // Perform the login action when the user submits the login form
-  $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
-
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
-  };
-})
-
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
-
-.controller('PlaylistCtrl', function($scope, $stateParams) {
-});
+    ;

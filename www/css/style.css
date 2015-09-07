@@ -232,9 +232,14 @@ div> h4 {
 #cover2Img, #cover3Img, #cover4Img{
     margin: 0.4em;
     width:90%;
-    height:auto;
 }
-@media screen and (orientation:portrait) {
+#cover2Img{
+    height:80vh;
+}
+#cover3Img, #cover4Img{
+    height:38vh;
+}
+@media only screen and (orientation:portrait) {
     #cover2Img{
         width:95%;
         height:80vh;

@@ -1,127 +1,309 @@
 /* Empty. Add your own CSS if you like */
 
-.card-wrap {
-    height: 100% !important;
-    display: -webkit-box !important;
-    display: -moz-box !important;
-    display: -ms-flexbox !important;
-    display: -webkit-flex !important;
-    display: flex !important;
-    -webkit-box-direction: normal !important;
-    -moz-box-direction: normal !important;
-    -webkit-box-orient: vertical !important;
-    -moz-box-orient: vertical !important;
-    -webkit-flex-direction: column !important;
-    -ms-flex-direction: column !important;
-    flex-direction: column !important;
-    -webkit-flex-wrap: nowrap !important;
-    -ms-flex-wrap: nowrap !important;
-    flex-wrap: nowrap !important;
-    -webkit-box-pack: justify !important;
-    -moz-box-pack: justify !important;
-    -webkit-justify-content: space-between !important;
-    -ms-flex-pack: justify !important;
-    justify-content: space-between !important;
-    -webkit-align-content: space-around !important;
-    -ms-flex-line-pack: distribute !important;
-    align-content: space-around !important;
-    -webkit-box-align: stretch !important;
-    -moz-box-align: stretch !important;
-    -webkit-align-items: stretch !important;
-    -ms-flex-align: stretch !important;
-    align-items: stretch !important;
+/*.card-wrap {*/
+    /*height: 100% !important;*/
+    /*display: -webkit-box !important;*/
+    /*display: -moz-box !important;*/
+    /*display: -ms-flexbox !important;*/
+    /*display: -webkit-flex !important;*/
+    /*display: flex !important;*/
+    /*-webkit-box-direction: normal !important;*/
+    /*-moz-box-direction: normal !important;*/
+    /*-webkit-box-orient: vertical !important;*/
+    /*-moz-box-orient: vertical !important;*/
+    /*-webkit-flex-direction: column !important;*/
+    /*-ms-flex-direction: column !important;*/
+    /*flex-direction: column !important;*/
+    /*-webkit-flex-wrap: nowrap !important;*/
+    /*-ms-flex-wrap: nowrap !important;*/
+    /*flex-wrap: nowrap !important;*/
+    /*-webkit-box-pack: justify !important;*/
+    /*-moz-box-pack: justify !important;*/
+    /*-webkit-justify-content: space-between !important;*/
+    /*-ms-flex-pack: justify !important;*/
+    /*justify-content: space-between !important;*/
+    /*-webkit-align-content: space-around !important;*/
+    /*-ms-flex-line-pack: distribute !important;*/
+    /*align-content: space-around !important;*/
+    /*-webkit-box-align: stretch !important;*/
+    /*-moz-box-align: stretch !important;*/
+    /*-webkit-align-items: stretch !important;*/
+    /*-ms-flex-align: stretch !important;*/
+    /*align-items: stretch !important;*/
 
-}
+/*}*/
 
 .full-card {
-    -webkit-box-flex: 1 !important;
-    -moz-box-flex: 1 !important;
-    -webkit-flex: 1 1 auto !important;
-    -ms-flex: 1 1 auto !important;
-    flex: 1 1 auto !important;
-    -webkit-align-self: stretch !important;
-    -ms-flex-item-align: stretch !important;
-    align-self: stretch !important;
+    /*-webkit-box-flex: 1 !important;*/
+    /*-moz-box-flex: 1 !important;*/
+    /*-webkit-flex: 1 1 auto !important;*/
+    /*-ms-flex: 1 1 auto !important;*/
+    /*flex: 1 1 auto !important;*/
+    /*-webkit-align-self: stretch !important;*/
+    /*-ms-flex-item-align: stretch !important;*/
+    /*align-self: stretch !important;*/
 
-    display: -webkit-box !important;
-    display: -moz-box !important;
-    display: -ms-flexbox !important;
-    display: -webkit-flex !important;
-    display: flex !important;
-    -webkit-box-direction: normal !important;
-    -moz-box-direction: normal !important;
-    -webkit-box-orient: horizontal !important;
-    -moz-box-orient: horizontal !important;
-    -webkit-flex-direction: row !important;
-    -ms-flex-direction: row !important;
-    flex-direction: row !important;
-    -webkit-flex-wrap: nowrap !important;
-    -ms-flex-wrap: nowrap !important;
-    flex-wrap: nowrap !important;
-    -webkit-box-pack: center !important;
-    -moz-box-pack: center !important;
-    -webkit-justify-content: center !important;
-    -ms-flex-pack: center !important;
-    justify-content: center !important;
-    -webkit-align-content: space-between !important;
-    -ms-flex-line-pack: justify !important;
-    align-content: space-between !important;
-    -webkit-box-align: center !important;
-    -moz-box-align: center !important;
-    -webkit-align-items: center !important;
-    -ms-flex-align: center !important;
-    align-items: center !important;
+    /*display: -webkit-box !important;*/
+    /*display: -moz-box !important;*/
+    /*display: -ms-flexbox !important;*/
+    /*display: -webkit-flex !important;*/
+    /*display: flex !important;*/
+    /*-webkit-box-direction: normal !important;*/
+    /*-moz-box-direction: normal !important;*/
+    /*-webkit-box-orient: horizontal !important;*/
+    /*-moz-box-orient: horizontal !important;*/
+    /*-webkit-flex-direction: row !important;*/
+    /*-ms-flex-direction: row !important;*/
+    /*flex-direction: row !important;*/
+    /*-webkit-flex-wrap: nowrap !important;*/
+    /*-ms-flex-wrap: nowrap !important;*/
+    /*flex-wrap: nowrap !important;*/
+    /*-webkit-box-pack: center !important;*/
+    /*-moz-box-pack: center !important;*/
+    /*-webkit-justify-content: center !important;*/
+    /*-ms-flex-pack: center !important;*/
+    /*justify-content: center !important;*/
+    /*-webkit-align-content: space-between !important;*/
+    /*-ms-flex-line-pack: justify !important;*/
+    /*align-content: space-between !important;*/
+    /*-webkit-box-align: center !important;*/
+    /*-moz-box-align: center !important;*/
+    /*-webkit-align-items: center !important;*/
+    /*-ms-flex-align: center !important;*/
+    /*align-items: center !important;*/
 }
-img{
-    height:auto;
-    width:auto;
-    max-width:90%;
+
+table, tr, td {
+    text-align: center !important;
+}
+
+img {
+    width: 10%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     /*position: relative;*/
 }
-.maxSize{
-    width:100%;
-    max-width:100%;
-}
-ion-content{
-    background-color: #dddddd;
-}
-/*general css above*//*general css above*//*general css above*/
 
+.maxSize1 {
+    width: 95%;
+    max-width: 100%;
+}
+
+ion-content {
+    background-color: #ffffff;
+}
+
+/*general css above*//*general css above*//*general css above*/
+img.bordered {
+    min-width: 50%;
+    width:80%;
+}
+.full-card{
+    border: 3px solid black;
+    width: 10em;
+    height: 10em;
+    overflow: hidden;
+    margin: 2px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+.full-card img{
+    width: 140%;
+    height: auto;
+    position: absolute;
+    left: -100%;
+    right: -100%;
+    top: -100%;
+    bottom: -100%;
+    margin: auto;
+}
+@media only screen and (max-width: 600px) {
+    .full-card{
+        width: 4em;
+        height: 4em;
+    }
+}
+.maxSize2 {
+    max-height: 100%;
+    width: auto;
+}
+
+.row .col {
+    border: 1px solid white;
+}
+.row:nth-of-type(even) {
+    color: #9d0420;
+}
+/*:nth-child(1)*/
+.row#header {
+    background-color:#9d0420;
+    color:white;
+}
+
+
+table {
+    /*the head of table*/
+    background-color: #9d0420;
+    color: white;
+}
+
+ion-scroll table {
+    background-color: lightgray;
+    color: black;
+}
+ion-scroll tr:nth-of-type(even) {
+    color: #9d0420;
+}
+
+
+tr, td {
+    border: 0.1em solid #ffffff !important;
+}
+tr:nth-of-type(1) {
+    background-color: #9d0420;
+    color: #ffffff;
+ }
+tbody{
+    background-color: lightgray;
+    color: black;
+}
+tbody tr:nth-of-type(even){
+    color: #9d0420;
+}
 
 .cover1-page {
-    margin:0.8em;
+    margin: 0.5em;
 }
+
 .cover1-header {
     background-color: #ffffff;
     padding: 1em 1em 2em 2em;
-    border-radius: 0 0 0 3em;
+}
+
+
+div> h4 {
+    width:100%;
+    font-size: 1em;
+    /*word-break: break-all;*/
+}
+
+#ESCicon {
+    width: 6em;
+    margin:0em;
+}
+
+.cover1-page,.cover2-page{
+    width: 100vw;
+    height: 98vh;
+    overflow: hidden;
+    margin: 2px;
+    position: relative;
+}
+/*@media only screen and (max-width: 768px) {*/
+.chop1 #coverImg{
+    box-shadow: -20px 20px 8px #888888;
+    margin: 0 1em;
+    height:90%;
+}
+@media screen and (orientation:portrait) {
+    .chop1 #coverImg{
+        height:90vh;
+    }
+}
+
+.cover2-page .row .col{
+    border:0;
+    padding:0;
 }
 .cover2-page{
-    margin:0.8em;
+    margin:1.5em;
 }
-
-.cover2-header{
+.cover2-content {
     background-color: #ffffff;
-    border-radius: 0 0 0 3em;
-    padding:3em;
 }
-.cover2-content{
-    background-color: #ffffff;
-    border-radius: 0 0 3em 0;
-
+#cover2Img, #cover3Img, #cover4Img,#usesPile1Img {
+    /*border-radius: 0 0 3em 0;*/
+    box-shadow: -10px 10px 8px #888888;
+    margin: 0.1em;
+    height:auto;
+}
+#cover2Img, #cover3Img, #cover4Img{
+    margin: 0.4em;
+    width:90%;
+}
+#cover2Img{
+    height:80vh;
+}
+#cover3Img, #cover4Img{
+    height:39vh;
+}
+@media screen and (orientation:portrait) {
+    #cover2Img{
+        width:95%;
+        height:80vh;
+    }
+    #cover3Img,#cover4Img{
+        width:95%;
+        height:40vh;
+    }
 }
 
-#ESCicon{
-    width: 6em;
+.headerBar{
+    height:30vh !important;
+}
+.topSpace{
+    top:30vh !important;
+}
+
+#unknownNewIcon{
     position: absolute;
-    top: 2.1em;
-    right:2.1em;
+    right:20vw;
+    top:10vh;
+    height:auto;
+    z-index: 999;
 }
-#coverImg{
-    border-radius: 0 0 3em 0;
+#tapHereIcon{
+    position: absolute;
+    top:15vh;
+    left:35%;
+    width:30%;
+    height:auto;
+    font-size: 1.5em;
+    z-index: 999;
+}
+@media only screen and (max-width: 768px) {
+    #tapHereIcon{
+        left:30%;
+        width:40%;
+        font-size: 1.2em;
+        line-height:1em;
+    }
 }
 
-
-.red{
-    color:orangered;
+.red {
+    color: #9d0420;
 }
+
+table td{
+    width:400px !important;
+    min-width: 100%!important;
+    /*font-size: 14px;*/
+    /*color:#4cd964;*/
+    /*color:rgba(0, 0, 0, 0);*/
+
+}
+table{
+    width:auto !important;
+}
+
+/*.col:nth-child(1){*/
+    /*background-color: orangered;*/
+/*}*/
+/*.col:nth-child(2){*/
+    /*background-color: yellow;*/
+/*}*/
+/*.col:nth-child(3){*/
+    /*background-color: pink;*/
+/*}*/

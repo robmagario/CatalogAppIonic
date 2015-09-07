@@ -4,9 +4,14 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
+function shouldRotateToOrientation(degrees) {
+    return true;
+};
+
 angular.module('catalog', ['ionic', 'catalog.controllers'])
 
     .run(function ($ionicPlatform) {
+        ionic.Platform.isFullScreen = true;
         $ionicPlatform.ready(function () {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)
@@ -49,3 +54,6 @@ angular.module('catalog', ['ionic', 'catalog.controllers'])
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/');
     });
+function shouldRotateToOrientation(degrees) {
+    return true;
+};
