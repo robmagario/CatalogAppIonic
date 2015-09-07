@@ -1,5 +1,5 @@
 <ion-view view-title="Cover" hide-nav-bar="true">
-    <ion-content id="cover1" padding="True">
+    <ion-content scroll="false" id="cover1" padding="True">
         <ion-slide-box show-pager="false" active-slide="coverSlide" on-slide-changed="slideHasChanged(index)">
             <ion-slide>
                 <div class="cover1-page">
@@ -10,7 +10,9 @@
                 </p>
                     <h4>Manufactured and Designed to ISO Certification</h4>
                 </div>
-                    <img src="images/splash.png" class="maxSize1" id="coverImg" alt="ESC cover">
+                    <div class="chop1">
+                        <img src="images/splash.png" class="maxSize1" id="coverImg" alt="ESC cover">
+                    </div>
                     <p></p>
                 </div>
             </ion-slide>
