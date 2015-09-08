@@ -1,10 +1,3 @@
-<!--<ion-view hide-nav-bar="true">-->
-    <!--<ion-header-bar class="headerBar" ng-hide="{{isBarHide}}">-->
-        <!--<button id="tapHereIcon2" class="button button-assertive">-->
-           <!--aascas-->
-       <!--</button>-->
-    <!--</ion-header-bar>-->
-<!--<ion-view>-->
 <ion-view hide-nav-bar="true">
     <ion-header-bar class="headerBar" ng-show="isBarShow">
         <img id="unknownNewIcon" src="http://www.scrabble.org.nz/splash-new.gif">
@@ -12,7 +5,7 @@
                 Tap the preview to navigate to the article
         </button>
     </ion-header-bar>
-    <ion-content padding="True" class="has-header-false">
+    <ion-content padding="True">
         <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged(index)">
             <ion-slide>
                 <div class="row">
@@ -57,7 +50,7 @@
                     </div>
                 </div>
             </ion-slide>
-            <ion-slide class="categoryContent">
+            <ion-slide class="categoryContent topSpace">
                 <!--<div class="headerBar">-->
                     <!--<img id="unknownNewIcon" src="http://www.scrabble.org.nz/splash-new.gif">-->
                     <!--<button id="tapHereIcon" class="button button-assertive">-->
