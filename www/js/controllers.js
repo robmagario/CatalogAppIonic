@@ -1,7 +1,8 @@
 var module = angular.module('catalog.controllers', [])
-        .controller('HomeCtrl', function ($scope, $state, $http, $ionicHistory, $ionicScrollDelegate, $ionicSlideBoxDelegate, $timeout) {
+        .controller('HomeCtrl', function ($scope, $state, $http, $ionicHistory, $ionicScrollDelegate, $ionicSlideBoxDelegate, $timeout,$ionicNavBarDelegate) {
             $http.get('http://escgroup.net/').then(function (res) {
                 $ionicScrollDelegate.getScrollView().options.scrollingY = false;
+
                 console.log('awoke');
                 $scope.categories = res.data;
             }, function (err) {
@@ -12,10 +13,13 @@ var module = angular.module('catalog.controllers', [])
             }
             $scope.slideHasChanged = function (index) {
                 if(index==2) {
+                    $scope.isBarShow=true;
                     $ionicScrollDelegate.getScrollView().options.scrollingY = true;
+                    $ionicNavBarDelegate.showBar();
                     //console.log('not lock');
                 }else{
                     //console.log('locked');
+                    $scope.isBarShow=false;
                     $ionicScrollDelegate.scrollTop();
                     $timeout(function (){
                         $ionicScrollDelegate.getScrollView().options.scrollingY = false;

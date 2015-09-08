@@ -1,5 +1,18 @@
+<!--<ion-view hide-nav-bar="true">-->
+    <!--<ion-header-bar class="headerBar" ng-hide="{{isBarHide}}">-->
+        <!--<button id="tapHereIcon2" class="button button-assertive">-->
+           <!--aascas-->
+       <!--</button>-->
+    <!--</ion-header-bar>-->
+<!--<ion-view>-->
 <ion-view hide-nav-bar="true">
-    <ion-content padding="True">
+    <ion-header-bar class="headerBar" ng-show="isBarShow">
+        <img id="unknownNewIcon" src="http://www.scrabble.org.nz/splash-new.gif">
+        <button id="tapHereIcon" class="button button-assertive">
+                Tap the preview to navigate to the article
+        </button>
+    </ion-header-bar>
+    <ion-content padding="True" class="has-header-false">
         <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged(index)">
             <ion-slide>
                 <div class="row">
@@ -44,13 +57,13 @@
                     </div>
                 </div>
             </ion-slide>
-            <ion-slide>
-                <div class="headerBar">
-                    <img id="unknownNewIcon" src="http://www.scrabble.org.nz/splash-new.gif">
-                    <button id="tapHereIcon" class="button button-assertive">
-                        Tap the preview to navigate to the article
-                    </button>
-                </div>
+            <ion-slide class="categoryContent">
+                <!--<div class="headerBar">-->
+                    <!--<img id="unknownNewIcon" src="http://www.scrabble.org.nz/splash-new.gif">-->
+                    <!--<button id="tapHereIcon" class="button button-assertive">-->
+                        <!--Tap the preview to navigate to the article-->
+                    <!--</button>-->
+                <!--</div>-->
                 <div class="row responsive-sm item-text-wrap" ng-repeat="category in categories"
                      ng-if="$index % 4 == 0">
                     <div class="col col-25" ng-click="selectCategory(categories[$index])">
