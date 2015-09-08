@@ -1,12 +1,27 @@
 var module = angular.module('catalog.controllers', [])
         .controller('HomeCtrl', function ($scope, $state, $http, $ionicHistory, $ionicScrollDelegate, $ionicSlideBoxDelegate, $timeout) {
             $http.get('http://escgroup.net/').then(function (res) {
+                $ionicScrollDelegate.getScrollView().options.scrollingY = false;
+                console.log('awoke');
                 $scope.categories = res.data;
             }, function (err) {
                 console.error("HOME", err);
             });
             $scope.selectCategory = function ($category) {
                 $state.go('category', {category: $category});
+            }
+            $scope.slideHasChanged = function (index) {
+                if(index==2) {
+                    $ionicScrollDelegate.getScrollView().options.scrollingY = true;
+                    //console.log('not lock');
+                }else{
+                    //console.log('locked');
+                    $ionicScrollDelegate.scrollTop();
+                    $timeout(function (){
+                        $ionicScrollDelegate.getScrollView().options.scrollingY = false;
+                    },100);
+
+                }
             }
         })
 

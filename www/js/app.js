@@ -24,6 +24,8 @@ angular.module('catalog', ['ionic', 'catalog.controllers'])
                 // org.apache.cordova.statusbar required
                 StatusBar.styleDefault();
             }
+            //$ionicScrollDelegate.getScrollView().options.scrollingY = false;
+
         });
     })
     .config(function ($stateProvider, $httpProvider, $urlRouterProvider,$sceDelegateProvider) {
