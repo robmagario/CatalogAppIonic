@@ -10,7 +10,7 @@ var module = angular.module('catalog.controllers', [])
             });
             $scope.selectCategory = function ($category) {
                 $state.go('category', {category: $category});
-            }
+            };
             $scope.slideHasChanged = function (index) {
                 if(index==2) {
                     $scope.isBarShow=true;
@@ -24,7 +24,14 @@ var module = angular.module('catalog.controllers', [])
                     $timeout(function (){
                         $ionicScrollDelegate.getScrollView().options.scrollingY = false;
                     },100);
-
+                }
+                if(index==3){
+                    $scope.showUsesPile=true;
+                }
+                if(index==4){
+                    var _firstSection=
+                    {url:"escgroup.net/esc-hot-rolled-sheet-piles/z-hot-rolled-sheet-piles/"};
+                    $state.go('section', {section:_firstSection});
                 }
             }
         })
