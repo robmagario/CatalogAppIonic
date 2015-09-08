@@ -130,8 +130,8 @@ img.bordered {
 
 @media only screen and (max-width: 768px) {
     .full-card {
-        width: 8em;
-        height: 8em;
+        width: 4em;
+        height: 4em;
     }
 }
 

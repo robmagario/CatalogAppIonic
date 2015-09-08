@@ -1,7 +1,7 @@
 <ion-view hide-nav-bar="true">
     <ion-header-bar class="headerBar" ng-show="isBarShow">
         <img id="unknownNewIcon" src="http://www.scrabble.org.nz/splash-new.gif">
-        <button id="tapHereIcon" class="button button-assertive">
+        <button id="tapHereIcon" disabled="true" class="button button-assertive">
                 Tap the preview to navigate to the article
         </button>
     </ion-header-bar>
@@ -57,7 +57,7 @@
                         <!--Tap the preview to navigate to the article-->
                     <!--</button>-->
                 <!--</div>-->
-                <div class="row responsive-sm item-text-wrap" ng-repeat="category in categories"
+                <div class="row item-text-wrap" ng-repeat="category in categories"
                      ng-if="$index % 4 == 0">
                     <div class="col col-25" ng-click="selectCategory(categories[$index])">
                         <div class="row row-top">
