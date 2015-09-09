@@ -12,23 +12,28 @@ var module = angular.module('catalog.controllers', [])
                 $state.go('category', {category: $category});
             };
             $scope.slideHasChanged = function (index) {
-                if(index==2) {
-                    $scope.isBarShow=true;
+                //ugly code
+                var usesPileIndex=2;
+                var aboutESCIndex=3;
+                var contentIndex=4;
+                $scope.isBarShow=false;
+                if(index==contentIndex||index==aboutESCIndex) {
                     $ionicScrollDelegate.getScrollView().options.scrollingY = true;
-                    $ionicNavBarDelegate.showBar();
-                    //console.log('not lock');
+                    if(index==contentIndex){
+                        $scope.isBarShow=true;
+                    }
                 }else{
-                    //console.log('locked');
-                    $scope.isBarShow=false;
                     $ionicScrollDelegate.scrollTop();
                     $timeout(function (){
                         $ionicScrollDelegate.getScrollView().options.scrollingY = false;
                     },100);
                 }
-                if(index==3){
+                if(index==usesPileIndex){
                     $scope.showUsesPile=true;
+                }else{
+                    $scope.showUsesPile=false;
                 }
-                if(index==4){
+                if(index==5){
                     var _firstSection=
                     {url:"escgroup.net/esc-hot-rolled-sheet-piles/z-hot-rolled-sheet-piles/"};
                     $state.go('section', {section:_firstSection});
