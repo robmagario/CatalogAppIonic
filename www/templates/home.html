@@ -1,8 +1,11 @@
 <ion-view hide-nav-bar="true">
     <ion-header-bar class="headerBar" ng-show="isBarShow">
-        <button id="tapHereIcon" disabled="true" class="button button-assertive">
-                Tap the preview to navigate to the article
+        <div class="headerBorder">
+        <h2 class="red contentTitle">Contents</h2>
+        <button id="tapHereIcon" disabled="true" class="button button-light">
+                <h2 class="red"><b>Tap the preview to navigate to the article</b></h2>
         </button>
+        </div>
     </ion-header-bar>
     <ion-content padding="True">
         <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged(index)">
@@ -22,6 +25,7 @@
                     </div>
                 </div>
             </ion-slide>
+
             <ion-slide>
                 <div class="row">
                     <div class="col">
@@ -49,6 +53,9 @@
                 </div>
             </ion-slide>
 
+            <!--<ion-slide></ion-slide>-->
+            <!--<ion-slide></ion-slide>-->
+
             <ion-slide class="categoryContent topSpace">
                 <!--<div class="headerBar">-->
                     <!--<img id="unknownNewIcon" src="http://www.scrabble.org.nz/splash-new.gif">-->
@@ -59,64 +66,62 @@
                 <div class="row item-text-wrap" ng-repeat="category in categories"
                      ng-if="$index % 4 == 0">
                     <div class="col col-25" ng-click="selectCategory(categories[$index])">
-                        <div class="row row-top">
-                            <h4>{{categories[$index].title}}</h4><br/></div>
 
-                        <div class="row row-bottom">
+                        <div class=" row row-top">
                             <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
                                 <img class="bordered" ng-src="http://{{categories[$index].thumbnail}}">
                             </div>
                         </div>
+                        <div class="row row-bottom text">
+                            {{categories[$index].title}}<br/></div>
                     </div>
 
                     <div class="col col-25" ng-click="selectCategory(categories[$index + 1])">
-                        <div class="row row-top">
-                            <h4>{{categories[$index+1].title}}</h4></div>
 
-                        <div class="row row-bottom">
+                        <div class="row row-top">
                             <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
                                 <img class="bordered" ng-src="http://{{categories[$index+1].thumbnail}}">
                             </div>
                         </div>
+                        <div class="row row-bottom text">
+                            {{categories[$index+1].title}}</div>
                     </div>
 
                     <div class="col col-25" ng-click="selectCategory(categories[$index + 2])">
-                        <div class="row row-top">
-                            <h4>{{categories[$index+2].title}}</h4></div>
 
-                        <div class="row row-bottom">
+                        <div class="row row-top">
                             <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
                                 <img class="bordered" ng-src="http://{{categories[$index+2].thumbnail}}">
                             </div>
                         </div>
+                        <div class="row row-bottom text">
+                            {{categories[$index+2].title}}</div>
                     </div>
 
                     <div class="col col-25" ng-click="selectCategory(categories[$index + 3])">
-                        <div class="row row-top">
-                            <h4>{{categories[$index+3].title}}</h4></div>
 
-                        <div class="row row-bottom">
+                        <div class="row row-top">
                             <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
                                 <img class="bordered" ng-src="http://{{categories[$index+3].thumbnail}}">
                             </div>
                         </div>
+                        <div class="row row-bottom text">
+                            {{categories[$index+3].title}}</div>
                     </div>
 
                 </div>
 
             </ion-slide>
 
-            <ion-slide>
-                <div class="row">
-                    <div class="col">
-                        <img src="images/Uses of Piles.jpg" ng-show="showUsesPile" class="fullScreenImage" id="usesPile1Img"
-                             alt="ESC cover">
-                    </div>
-                </div>
-            </ion-slide>
             <ion-slide>
                 <!--to go to the first page of section-->
             </ion-slide>
+
+            <ion-slide>
+                <img src="images/Uses of Piles.jpg" ng-show="showUsesPile" class="fullScreenImage" id="usesPile1Img"
+                     alt="ESC cover">
+            </ion-slide>
+
         </ion-slide-box>
     </ion-content>
 </ion-view>

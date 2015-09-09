@@ -93,7 +93,45 @@ img {
 }
 
 ion-content {
-    background-color: #ffffff;
+    /*background-color: #dddddd;*/
+}
+/*.headerBorder{*/
+    /*border-style: solid;*/
+    /*border-color: #dddddd;*/
+    /*border-radius: 0 0 0 4em ;*/
+    /*border-left-width:5px;*/
+    /*border-top-width:0px;*/
+    /*border-right-width:0px;*/
+    /*border-bottom-width:0;*/
+/*}*/
+
+
+.headerBar{
+    border-left-width:10px;
+    border-top-width:10px;
+    border-right-width:10px;
+    border-bottom-width:0;
+    border-style: solid;
+    border-color: #dddddd;
+    border-radius: 0 0 0 4em ;
+    height: 30vh !important;
+}
+.headerBorder{
+    width: 100%;
+    height:100%
+}
+
+.topSpace {
+    top:30vh !important;
+    /*padding-bottom: 30vh !important;*/
+}
+ion-content{
+    border-left-width:10px;
+    border-top-width:0;
+    border-right-width:10px;
+    border-bottom-width:10px;
+    border-style: solid;
+    border-color: #dddddd;
 }
 
 /*general css above*//*general css above*//*general css above*/
@@ -104,11 +142,12 @@ img.bordered {
 .categoryContent{
     top:3em;
 }
-.item-text-wrap {
-    text-align: center;
+.item-text-wrap .text{
+    margin: 0.1em;
+    text-align: left;
+    font-size: 1em;
 }
 .full-card {
-    border: 3px solid black;
     width: 10em;
     height: 10em;
     overflow: hidden;
@@ -116,6 +155,7 @@ img.bordered {
     margin-left: auto;
     margin-right: auto;
     border-radius: 2em;
+    box-shadow: -5px 5px 8px #888888;
 }
 
 .full-card img {
@@ -151,7 +191,7 @@ img.bordered {
     border: 1px solid white;
 }
 
-.row:nth-of-type(even) {
+.sectionView.row:nth-of-type(even) {
     color: #9d0420;
 }
 
@@ -205,7 +245,6 @@ tbody tr:nth-of-type(even) {
 
 div > h4 {
     width: 100%;
-    font-size: 1em;
     /*word-break: break-all;*/
 }
 
@@ -280,31 +319,23 @@ div > h4 {
     }
 }
 
-.headerBar {
-    height: 30vh !important;
-}
 
-.topSpace {
-    top:30vh !important;
-    /*padding-bottom: 30vh !important;*/
+.contentTitle{
+    margin: 1em;
+    margin-top: 1em !important;
 }
-
-#unknownNewIcon {
-    position: absolute;
-    right: 15vw;
-    top: 5vh;
-    height: auto;
-    z-index: 999;
-}
-
 #tapHereIcon {
     position: absolute;
     top: 15vh;
-    left: 35%;
-    width: 30%;
+    left: 30%;
+    width: 40%;
     height: auto;
-    font-size: 1.5em;
     z-index: 999;
+    /*background-color: #dddddd;*/
+    border: 5px solid #dddddd;
+    box-shadow: -5px 5px 8px #888888;
+    /*box-shadow: -5px 5px 8px #888888;*/
+    /*border: 5px solid red;*/
 }
 
 @media only screen and (orientation: portrait) {
