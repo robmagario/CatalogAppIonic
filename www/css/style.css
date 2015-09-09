@@ -259,6 +259,11 @@ div > h4 {
     /*word-break: break-all;*/
 }
 
+/* this code below makes the table responsive - RH Sep/9/2015 */
+div {
+    width:100%;
+}
+
 #ESCicon {
     width: 6em;
     margin: 0em;
