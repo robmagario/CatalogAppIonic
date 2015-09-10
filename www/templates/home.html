@@ -10,19 +10,22 @@
     <ion-content padding="True">
         <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged(index)">
             <ion-slide>
+                <div class="rowBox">
                 <div class="row">
-                    <div class="col">
+                    <div class="col col-33 col-center">
+                        <img src="images/icon.png" id="ESCicon" alt="ESC icon">
                         <div class="cover1-header">
-                            <img src="images/icon.png" id="ESCicon" alt="ESC icon">
-                            <p>
-                                <b><h2 class="red title">PILING SOLUTIONS</h2></b>
-                            </p>
-                            <h4>Manufactured and Designed to ISO Certification</h4>
-                        </div>
-                        <div class="chop1">
-                            <img src="images/splash.png" class="fullScreenImage" id="coverImg" alt="ESC cover">
                         </div>
                     </div>
+                    <div class="col">
+                            <b><h2 class="red title">PILING SOLUTIONS</h2></b>
+                        <h4>Manufactured and Designed to ISO Certification</h4>
+
+                    </div>
+                </div>
+                </div>
+                <div class="chop1">
+                    <img src="images/splash.png" class="fullScreenImage" id="coverImg" alt="ESC cover">
                 </div>
             </ion-slide>
 
@@ -50,13 +53,13 @@
             </ion-slide>
 
             <ion-slide>
-                <div class="red title">
-                    <b><h2 class="red title coverTitle">
-                        Uses of sheet piles & piles in everyday life
-                    </h2></b>
-                </div>
+                <h2 class="red title coverTitle" id="usesPile">
+                    <b>Uses of sheet piles & piles in everyday life</b>
+                </h2>
+                <div class="frame">
                 <img src="images/Uses of Piles.jpg" ng-show="showUsesPile" class="fullScreenImage" id="usesPile1Img"
                      alt="ESC cover">
+                </div>
             </ion-slide>
 
             <ion-slide>
