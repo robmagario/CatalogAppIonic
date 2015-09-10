@@ -121,7 +121,6 @@ ion-content {
     /*border-color: #dddddd;*/
     /*border-radius: 0 0 0 4em ;*/
 /*}*/
-
 .headerBar{
     border-left-width:10px;
     border-top-width:10px;
@@ -130,7 +129,7 @@ ion-content {
     border-style: solid;
     border-color: #dddddd;
     height: 30vh !important;
-    border-radius: 0 0 0 4em ;
+    /*border-radius: 0 0 0 4em ;*/
     /*background-color: #dddddd;*/
 }
 .topSpace {
@@ -158,6 +157,12 @@ img.bordered {
     text-align: left;
     font-size: 1em;
 }
+@media only screen and (max-width: 600px) {
+    .item-text-wrap .text{
+        font-size: 0.6em;
+    }
+}
+
 .full-card {
     width: 10em;
     height: 10em;
@@ -265,8 +270,6 @@ div {
 }
 
 #ESCicon {
-    /*position: relative;*/
-    /*top:40%;*/
     width: 6em;
     margin: 0em;
 }
@@ -374,15 +377,11 @@ div {
 .aboutEscSlide .video{
     width:100%;
     height:auto;
-    height:25vh;
+    height:40vh;
     padding: 0.5em;
-    /*margin-bottom: 1em;*/
+    margin-bottom: 2em;
     /*margin-right: 2em;*/
     /*margin-top: 50px !important;*/
-}
-.aboutEscSlide iframe{
-    width:80%;
-    height:auto;
 }
 #tapHereIcon {
     position: absolute;

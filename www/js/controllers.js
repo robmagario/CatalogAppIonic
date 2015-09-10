@@ -2,7 +2,7 @@ var module = angular.module('catalog.controllers', [])
         .controller('HomeCtrl', function ($scope, $state, $http, $ionicHistory, $ionicScrollDelegate, $ionicSlideBoxDelegate, $timeout,$ionicNavBarDelegate) {
             $http.get('http://escgroup.net/').then(function (res) {
                 $ionicScrollDelegate.getScrollView().options.scrollingY = false;
-
+                //$scope.stayHere();
                 console.log('awoke');
                 $scope.categories = res.data;
             }, function (err) {
@@ -11,33 +11,40 @@ var module = angular.module('catalog.controllers', [])
             $scope.selectCategory = function ($category) {
                 $state.go('category', {category: $category});
             };
+
+            $scope.stayHere= function () {
+                alert('ok');
+            }
             $scope.slideHasChanged = function (index) {
-                //ugly code
-                var usesPileIndex=2;
-                var aboutESCIndex=3;
-                var contentIndex=4;
-                $scope.isBarShow=false;
-                if(index==contentIndex||index==aboutESCIndex) {
-                    $ionicScrollDelegate.getScrollView().options.scrollingY = true;
-                    if(index==contentIndex){
-                        $scope.isBarShow=true;
+                $timeout(function () {
+                    //ugly code
+                    var usesPileIndex = 2;
+                    var aboutESCIndex = 3;
+                    var contentIndex = 4;
+                    $scope.isBarShow = false;
+                    if (index == contentIndex || index == aboutESCIndex) {
+                        $ionicScrollDelegate.getScrollView().options.scrollingY = true;
+                        if (index == contentIndex) {
+                            $scope.isBarShow = true;
+                        }
+                    } else {
+                        $ionicScrollDelegate.scrollTop();
+                        $timeout(function () {
+                            $ionicScrollDelegate.getScrollView().options.scrollingY = false;
+                        }, 100);
                     }
-                }else{
-                    $ionicScrollDelegate.scrollTop();
-                    $timeout(function (){
-                        $ionicScrollDelegate.getScrollView().options.scrollingY = false;
-                    },100);
-                }
-                if(index==usesPileIndex){
-                    $scope.showUsesPile=true;
-                }else{
-                    $scope.showUsesPile=false;
-                }
-                if(index==5){
-                    var _firstSection=
-                    {url:"escgroup.net/esc-hot-rolled-sheet-piles/z-hot-rolled-sheet-piles/"};
-                    $state.go('section', {section:_firstSection});
-                }
+                    if (index == usesPileIndex) {
+                        $scope.showUsesPile = true;
+                    } else {
+                        $scope.showUsesPile = false;
+                    }
+                    if (index == 5) {
+                        var _firstSection =
+                        {url: "escgroup.net/esc-hot-rolled-sheet-piles/z-hot-rolled-sheet-piles/"};
+                        $state.go('section', {section: _firstSection});
+                    }
+                },100);
+
             }
         })
 

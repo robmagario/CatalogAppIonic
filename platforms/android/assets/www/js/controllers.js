@@ -1,43 +1,44 @@
 var module = angular.module('catalog.controllers', [])
-        .controller('CoverCtrl', function ($scope, $state, $ionicHistory,$ionicScrollDelegate, $ionicSlideBoxDelegate, $timeout) {
-            $scope.slideHasChanged = function (index) {
-                $ionicScrollDelegate.scrollTop();
-                if (index == 2) {
-                    $state.go('home');
-                    $timeout(function () {
-                        $ionicSlideBoxDelegate.slide(0, 0);
-                    }, 300);
-                }
-                $timeout( function() {
-                    //$ionicScrollDelegate.resize();
-                    //console.log('resize');
-                }, 100);
-            }
-        })
-        .controller('HomeCtrl', function ($scope, $state, $http,$ionicSlideBoxDelegate,$ionicScrollDelegate, $ionicModal, $timeout) {
-            //$http.get('http://www.joronoko.com/').then(function (res) {
+        .controller('HomeCtrl', function ($scope, $state, $http, $ionicHistory, $ionicScrollDelegate, $ionicSlideBoxDelegate, $timeout,$ionicNavBarDelegate) {
             $http.get('http://escgroup.net/').then(function (res) {
+                $ionicScrollDelegate.getScrollView().options.scrollingY = false;
+
+                console.log('awoke');
                 $scope.categories = res.data;
             }, function (err) {
                 console.error("HOME", err);
             });
+            $scope.selectCategory = function ($category) {
+                $state.go('category', {category: $category});
+            };
             $scope.slideHasChanged = function (index) {
-                if (index == 1) {
+                //ugly code
+                var usesPileIndex=2;
+                var aboutESCIndex=3;
+                var contentIndex=4;
+                $scope.isBarShow=false;
+                if(index==contentIndex||index==aboutESCIndex) {
+                    $ionicScrollDelegate.getScrollView().options.scrollingY = true;
+                    if(index==contentIndex){
+                        $scope.isBarShow=true;
+                    }
+                }else{
                     $ionicScrollDelegate.scrollTop();
-                    //$ionicScrollDelegate.resize();
-                    $scope.usesPileShow=true;
+                    $timeout(function (){
+                        $ionicScrollDelegate.getScrollView().options.scrollingY = false;
+                    },100);
                 }
-                if (index == 2) {
-                    console.log('here');
-                    var _firstSection={url:
-                        "escgroup.net/esc-hot-rolled-sheet-piles/z-hot-rolled-sheet-piles/"};
+                if(index==usesPileIndex){
+                    $scope.showUsesPile=true;
+                }else{
+                    $scope.showUsesPile=false;
+                }
+                if(index==5){
+                    var _firstSection=
+                    {url:"escgroup.net/esc-hot-rolled-sheet-piles/z-hot-rolled-sheet-piles/"};
                     $state.go('section', {section:_firstSection});
                 }
             }
-            $scope.selectCategory = function ($category) {
-                $state.go('category', {category: $category});
-            }
-
         })
 
         .controller('CategoryCtrl', function ($scope, $state, $ionicHistory, $stateParams, $http, $ionicModal, $timeout) {
@@ -83,11 +84,7 @@ var module = angular.module('catalog.controllers', [])
                     scope.$watch(function () {
                         return scope.$eval(attrs.bindHtmlCompile);
                     }, function (value) {
-                        // Incase value is a TrustedValueHolderType, sometimes it
-                        // needs to be explicitly called into a string in order to
-                        // get the HTML string.
                         element.html(value && value.toString());
-                        // If scope is provided use it, otherwise use parent scope
                         var compileScope = scope;
                         if (attrs.bindHtmlScope) {
                             compileScope = scope.$eval(attrs.bindHtmlScope);
