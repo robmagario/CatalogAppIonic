@@ -11,10 +11,6 @@ var module = angular.module('catalog.controllers', [])
             $scope.selectCategory = function ($category) {
                 $state.go('category', {category: $category});
             };
-
-            $scope.stayHere= function () {
-                alert('ok');
-            }
             $scope.slideHasChanged = function (index) {
                 $timeout(function () {
                     //ugly code
