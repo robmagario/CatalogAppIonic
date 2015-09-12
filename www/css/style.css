@@ -95,52 +95,54 @@ img {
 ion-content {
     /*background-color: #dddddd;*/
 }
-/*.headerBorder{*/
-    /*border-style: solid;*/
-    /*border-color: #dddddd;*/
-    /*border-radius: 0 0 0 4em ;*/
-    /*border-left-width:5px;*/
-    /*border-top-width:0px;*/
-    /*border-right-width:0px;*/
-    /*border-bottom-width:0;*/
-/*}*/
 
+/*.headerBorder{*/
+/*border-style: solid;*/
+/*border-color: #dddddd;*/
+/*border-radius: 0 0 0 4em ;*/
+/*border-left-width:5px;*/
+/*border-top-width:0px;*/
+/*border-right-width:0px;*/
+/*border-bottom-width:0;*/
+/*}*/
 
 /*.headerBar{*/
-    /*height: 30vh !important;*/
-    /*background-color: #ffffff;*/
+/*height: 30vh !important;*/
+/*background-color: #ffffff;*/
 /*}*/
 /*.headerBorder{*/
-    /*width: 100%;*/
-    /*height:100%;*/
-    /*border-left-width:10px;*/
-    /*border-top-width:0;*/
-    /*border-right-width:10px;*/
-    /*border-bottom-width:0;*/
-    /*border-style: solid;*/
-    /*border-color: #dddddd;*/
-    /*border-radius: 0 0 0 4em ;*/
+/*width: 100%;*/
+/*height:100%;*/
+/*border-left-width:10px;*/
+/*border-top-width:0;*/
+/*border-right-width:10px;*/
+/*border-bottom-width:0;*/
+/*border-style: solid;*/
+/*border-color: #dddddd;*/
+/*border-radius: 0 0 0 4em ;*/
 /*}*/
-.headerBar{
-    border-left-width:10px;
-    border-top-width:10px;
-    border-right-width:10px;
-    border-bottom-width:0;
+.headerBar {
+    border-left-width: 10px;
+    border-top-width: 10px;
+    border-right-width: 10px;
+    border-bottom-width: 0;
     border-style: solid;
     border-color: #dddddd;
     height: 30vh !important;
     /*border-radius: 0 0 0 4em ;*/
     /*background-color: #dddddd;*/
 }
+
 .topSpace {
-    top:30vh !important;
+    padding-top: 20vh !important;
     /*padding-bottom: 30vh !important;*/
 }
-ion-content{
-    border-left-width:10px;
-    border-top-width:0;
-    border-right-width:10px;
-    border-bottom-width:10px;
+
+ion-content {
+    border-left-width: 10px;
+    border-top-width: 0;
+    border-right-width: 10px;
+    border-bottom-width: 10px;
     border-style: solid;
     border-color: #dddddd;
 }
@@ -149,16 +151,15 @@ img.bordered {
     min-width: 50%;
     width: 80%;
 }
-.categoryContent{
-    top:3em;
-}
-.item-text-wrap .text{
+
+.item-text-wrap .text {
     margin: 0.1em;
     text-align: left;
     font-size: 1em;
 }
+
 @media only screen and (max-width: 600px) {
-    .item-text-wrap .text{
+    .item-text-wrap .text {
         font-size: 0.6em;
     }
 }
@@ -193,7 +194,7 @@ img.bordered {
     }
 }
 
-.esc-category-item img{
+.esc-category-item img {
     border: 3px solid black;
     border-radius: 2em;
 }
@@ -266,7 +267,7 @@ div > h4 {
 
 /* this code below makes the table responsive - RH Sep/9/2015 */
 div {
-    width:100%;
+    width: 100%;
 }
 
 #ESCicon {
@@ -314,22 +315,29 @@ div {
     margin: 0.1em;
     height: auto;
 }
-.frame{
+
+.frame {
     height: 100vh;
 }
+
 @media only screen and (max-height: 600px) {
-    .frame{
+    .frame {
         height: 600px;
     }
 }
-#usesPile{
+
+#usesPile {
     text-align: center;
     font-size: 2.5em;
 }
-#usesPile1Img{
-    margin:auto;
+
+#usesPile1Img {
+    margin: auto;
     position: absolute;
-    top: 0; bottom: 10%; left: 0; right: 0;
+    top: 0;
+    bottom: 10%;
+    left: 0;
+    right: 0;
 }
 
 #cover2Img, #cover3Img, #cover4Img {
@@ -357,36 +365,40 @@ div {
     }
 }
 
-.coverTitle{
-    margin:0.8em;
+.coverTitle {
+    margin: 0.8em;
     margin-top: 0.8em !important;
 }
-.contentTitle{
+
+.contentTitle {
     margin: 1em;
     margin-top: 1em !important;
 }
-.aboutEscSlide{
+
+.aboutEscSlide {
     margin: 1em;
     text-align: justify;
 }
-.aboutEscSlide  ul{
+
+.aboutEscSlide ul {
     margin: 1em;
     /*font-size: 2em;*/
     /*text-align: justify;*/
 }
-.aboutEscSlide .video{
-    width:100%;
-    height:auto;
-    height:40vh;
+
+.aboutEscSlide .video {
+    width: 100%;
+    height: auto;
+    height: 40vh;
     padding: 0.5em;
     margin-bottom: 2em;
     /*margin-right: 2em;*/
     /*margin-top: 50px !important;*/
 }
+
 #tapHereIcon {
-    position: absolute;
-    top: 15vh;
     left: 20%;
+    margin-bottom: 5vh;
     width: 60%;
     height: auto;
     z-index: 999;
@@ -406,7 +418,8 @@ div {
         font-size: 1.2em;
         line-height: 1em;
     }
-    #tapHereIcon h2{
+
+    #tapHereIcon h2 {
         font-size: 1.2em;
     }
 }

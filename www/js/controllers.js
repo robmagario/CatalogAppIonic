@@ -17,22 +17,13 @@ var module = angular.module('catalog.controllers', [])
                     var usesPileIndex = 2;
                     var aboutESCIndex = 3;
                     var contentIndex = 4;
-                    $scope.isBarShow = false;
-                    if (index == contentIndex || index == aboutESCIndex) {
+                    if (index == aboutESCIndex) {
                         $ionicScrollDelegate.getScrollView().options.scrollingY = true;
-                        if (index == contentIndex) {
-                            $scope.isBarShow = true;
-                        }
                     } else {
                         $ionicScrollDelegate.scrollTop();
                         $timeout(function () {
                             $ionicScrollDelegate.getScrollView().options.scrollingY = false;
                         }, 100);
-                    }
-                    if (index == usesPileIndex) {
-                        $scope.showUsesPile = true;
-                    } else {
-                        $scope.showUsesPile = false;
                     }
                     if (index == 5) {
                         var _firstSection =
