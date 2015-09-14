@@ -1,37 +1,15 @@
 /* Empty. Add your own CSS if you like */
 
-/*.card-wrap {*/
-/*height: 100% !important;*/
-/*display: -webkit-box !important;*/
-/*display: -moz-box !important;*/
-/*display: -ms-flexbox !important;*/
-/*display: -webkit-flex !important;*/
-/*display: flex !important;*/
-/*-webkit-box-direction: normal !important;*/
-/*-moz-box-direction: normal !important;*/
-/*-webkit-box-orient: vertical !important;*/
-/*-moz-box-orient: vertical !important;*/
-/*-webkit-flex-direction: column !important;*/
-/*-ms-flex-direction: column !important;*/
-/*flex-direction: column !important;*/
-/*-webkit-flex-wrap: nowrap !important;*/
-/*-ms-flex-wrap: nowrap !important;*/
-/*flex-wrap: nowrap !important;*/
-/*-webkit-box-pack: justify !important;*/
-/*-moz-box-pack: justify !important;*/
-/*-webkit-justify-content: space-between !important;*/
-/*-ms-flex-pack: justify !important;*/
-/*justify-content: space-between !important;*/
-/*-webkit-align-content: space-around !important;*/
-/*-ms-flex-line-pack: distribute !important;*/
-/*align-content: space-around !important;*/
-/*-webkit-box-align: stretch !important;*/
-/*-moz-box-align: stretch !important;*/
-/*-webkit-align-items: stretch !important;*/
-/*-ms-flex-align: stretch !important;*/
-/*align-items: stretch !important;*/
-
-/*}*/
+.diagram{
+    float:left;
+    width: 30vw;
+    height:auto;
+}
+.headerImage{
+    float:bottom;
+    width: 90vw;
+    height:auto;
+}
 
 .full-card {
     /*-webkit-box-flex: 1 !important;*/

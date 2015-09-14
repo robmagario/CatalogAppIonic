@@ -4,7 +4,12 @@
             <div bind-html-compile="sectionData.content"></div>
         </ion-header-bar>
         <!--<ion-content bind-html-compile="trustContent(sectionData.content)"></ion-content>-->
-       <ion-content>
-                <!--<div bind-html-compile="sectionData.content"></div>-->
+       <ion-content class="content">
+           <img class="diagram" ng-src="http://escgroup.net/{{sectionData.diagram}}">
+           <img class="headerImage" ng-src="http://escgroup.net/{{sectionData.headerImage}}">
+           <!--<img class="" ng-src="http://{{categories[$index+2].thumbnail}}">-->
+           <!--<img src="" class="fullScreenImage" id="coverImg" alt="ESC cover">-->
+
+           <!--<div bind-html-compile="sectionData.content"></div>-->
        </ion-content>
 </ion-view>
