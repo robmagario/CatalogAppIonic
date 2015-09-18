@@ -3,36 +3,51 @@
         <h1 class="title">{{category.title}}</h1>
     </ion-header-bar>
     <ion-content padding="True">
+        <br>
+        <h2 id="tapHereIcon" class="red button button-light"><b>Tap the article to view detailed information</b></h2>
         <ion-list>
-            <div class="row esc-category-item" ng-repeat="section in sections" ng-if="$index % 3 == 0">
-                <div class="col col-33" ng-click="selectSection(sections[$index])">
+            <div class="row esc-category-item" ng-repeat="section in sections" ng-if="$index % 4 == 0">
+                <div class="col col-25" ng-click="selectSection(sections[$index])">
                     <div class="row row-top">
-                        <h4>{{sections[$index].title}}</h4>
+                        <div class="full-card" ng-show="sections[$index].images != undefined" >
+                            <img class="bordered" ng-src="http://{{sections[$index].images}}">
+                        </div>
                     </div>
-                    <div class="row row-bottom">
-                        <img class="bordered" ng-src="http://{{sections[$index].images}}">
+                    <div class="row row-bottom text">
+                        {{sections[$index].title}}
                     </div>
                 </div>
-                <div class="col col-33" ng-click="selectSection(sections[$index + 1])"
-                     ng-if="$index + 1 < sections.length">
+                <div class="col col-25" ng-click="selectSection(sections[$index+1])">
                     <div class="row row-top">
-                        <h4>{{sections[$index + 1].title}}</h4>
+                        <div class="full-card" ng-show="sections[$index+1].images != undefined">
+                            <img class="bordered" ng-src="http://{{sections[$index+1].images}}">
+                        </div>
                     </div>
-                    <div class="row row-bottom">
-                        <img class="bordered" ng-src="http://{{sections[$index+1].images}}"/>
+                    <div class="row row-bottom text">
+                        {{sections[$index+1].title}}
                     </div>
+                </div>
+                <div class="col col-25" ng-click="selectSection(sections[$index+2])">
+                <div class="row row-top">
+                    <div class="full-card" ng-show="sections[$index+2].images != undefined">
+                        <img class="bordered" ng-src="http://{{sections[$index+2].images}}">
+                    </div>
+                </div>
+                <div class="row row-bottom text">
+                    {{sections[$index+2].title}}
+                </div>
+                </div>
+                <div class="col col-25" ng-click="selectSection(sections[$index+3])">
+                    <div class="row row-top">
+                        <div class="full-card" ng-show="sections[$index+3].images != undefined">
+                            <img class="bordered" ng-src="http://{{sections[$index+3].images}}">
+                        </div>
+                    </div>
+                    <div class="row row-bottom text">
+                        {{sections[$index+3].title}}
+                    </div>
+                </div>
 
-                </div>
-                <div class="col col-33" ng-click="selectSection(sections[$index + 2])"
-                     ng-if="$index + 2 < sections.length">
-                    <div class="row row-top">
-                        <h4>{{sections[$index + 2].title}}</h4>
-                    </div>
-                    <div class="row row-bottom">
-                        <img class="bordered" ng-src="http://{{sections[$index+2].images}}"/>
-                    </div>
-
-                </div>
             </div>
         </ion-list>
     </ion-content>

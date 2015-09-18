@@ -6,7 +6,7 @@ var module = angular.module('catalog.controllers', [])
                 console.log('awoke');
                 $scope.categories = res.data;
                 //skip for test
-                $ionicSlideBoxDelegate.slide(4);
+                //$ionicSlideBoxDelegate.slide(4);
             }, function (err) {
                 console.error("HOME", err);
             });
