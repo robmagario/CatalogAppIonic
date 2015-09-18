@@ -4,7 +4,7 @@
     </ion-header-bar>
     <ion-content padding="True">
         <ion-list>
-            <div class="row responsive-sm esc-category-item" ng-repeat="section in sections" ng-if="$index % 3 == 0">
+            <div class="row esc-category-item" ng-repeat="section in sections" ng-if="$index % 3 == 0">
                 <div class="col col-33" ng-click="selectSection(sections[$index])">
                     <div class="row row-top">
                         <h4>{{sections[$index].title}}</h4>

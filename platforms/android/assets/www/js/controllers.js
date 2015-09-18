@@ -2,9 +2,11 @@ var module = angular.module('catalog.controllers', [])
         .controller('HomeCtrl', function ($scope, $state, $http, $ionicHistory, $ionicScrollDelegate, $ionicSlideBoxDelegate, $timeout,$ionicNavBarDelegate) {
             $http.get('http://escgroup.net/').then(function (res) {
                 $ionicScrollDelegate.getScrollView().options.scrollingY = false;
-
+                //$scope.stayHere();
                 console.log('awoke');
                 $scope.categories = res.data;
+                //skip for test
+                $ionicSlideBoxDelegate.slide(4);
             }, function (err) {
                 console.error("HOME", err);
             });
@@ -12,32 +14,26 @@ var module = angular.module('catalog.controllers', [])
                 $state.go('category', {category: $category});
             };
             $scope.slideHasChanged = function (index) {
-                //ugly code
-                var usesPileIndex=2;
-                var aboutESCIndex=3;
-                var contentIndex=4;
-                $scope.isBarShow=false;
-                if(index==contentIndex||index==aboutESCIndex) {
-                    $ionicScrollDelegate.getScrollView().options.scrollingY = true;
-                    if(index==contentIndex){
-                        $scope.isBarShow=true;
+                $timeout(function () {
+                    //ugly code
+                    var usesPileIndex = 2;
+                    var aboutESCIndex = 3;
+                    var contentIndex = 4;
+                    if (index == aboutESCIndex) {
+                        $ionicScrollDelegate.getScrollView().options.scrollingY = true;
+                    } else {
+                        $ionicScrollDelegate.scrollTop();
+                        $timeout(function () {
+                            $ionicScrollDelegate.getScrollView().options.scrollingY = false;
+                        }, 100);
                     }
-                }else{
-                    $ionicScrollDelegate.scrollTop();
-                    $timeout(function (){
-                        $ionicScrollDelegate.getScrollView().options.scrollingY = false;
-                    },100);
-                }
-                if(index==usesPileIndex){
-                    $scope.showUsesPile=true;
-                }else{
-                    $scope.showUsesPile=false;
-                }
-                if(index==5){
-                    var _firstSection=
-                    {url:"escgroup.net/esc-hot-rolled-sheet-piles/z-hot-rolled-sheet-piles/"};
-                    $state.go('section', {section:_firstSection});
-                }
+                    if (index == 5) {
+                        var _firstSection =
+                        {url: "escgroup.net/esc-hot-rolled-sheet-piles/z-hot-rolled-sheet-piles/"};
+                        $state.go('section', {section: _firstSection});
+                    }
+                },100);
+
             }
         })
 
@@ -57,16 +53,30 @@ var module = angular.module('catalog.controllers', [])
             }
         })
 
-        .controller('SectionCtrl', function ($scope, $ionicHistory, $compile, $sce, $state, $stateParams, $http, $ionicModal, $timeout) {
+        .controller('SectionCtrl', function ($scope,$ionicSlideBoxDelegate,$ionicScrollDelegate, $ionicHistory, $compile, $sce, $state, $stateParams, $http, $ionicModal, $timeout) {
             if ($stateParams.section == null) {
                 $state.go('home');
                 $ionicHistory.clearHistory();
                 $ionicHistory.clearCache();
             }
+            $scope.slideHasChanged = function (index) {
+                if(index==1){
+                    $ionicSlideBoxDelegate.enableSlide(false);
+                }else{
+                    $ionicSlideBoxDelegate.enableSlide(true);
+                }
+            };
             $scope.section = $stateParams.section;
             if ($scope.section != null) {
                 $http.get('http://' + $scope.section.url).then(function (res) {
                     $scope.sectionData = res.data;
+                    $scope.theTable=$scope.sectionData.tables[0];
+
+
+
+
+
+
                 }, function (err) {
                     console.error("HOME", err);
                 });

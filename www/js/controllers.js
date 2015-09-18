@@ -33,7 +33,6 @@ var module = angular.module('catalog.controllers', [])
                         $state.go('section', {section: _firstSection});
                     }
                 },100);
-
             }
         })
 
@@ -53,16 +52,25 @@ var module = angular.module('catalog.controllers', [])
             }
         })
 
-        .controller('SectionCtrl', function ($scope, $ionicHistory, $compile, $sce, $state, $stateParams, $http, $ionicModal, $timeout) {
+        .controller('SectionCtrl', function ($scope,$ionicSlideBoxDelegate,$ionicScrollDelegate, $ionicHistory, $compile, $sce, $state, $stateParams, $http, $ionicModal, $timeout) {
             if ($stateParams.section == null) {
                 $state.go('home');
                 $ionicHistory.clearHistory();
                 $ionicHistory.clearCache();
             }
+            $scope.slideHasChanged = function (index) {
+                if(index==1){
+                    $ionicScrollDelegate.scrollTop();
+                    $ionicSlideBoxDelegate.enableSlide(false);
+                }else{
+                    $ionicSlideBoxDelegate.enableSlide(true);
+                }
+            };
             $scope.section = $stateParams.section;
             if ($scope.section != null) {
                 $http.get('http://' + $scope.section.url).then(function (res) {
                     $scope.sectionData = res.data;
+                    $scope.theTable=$scope.sectionData.tables[0];
                 }, function (err) {
                     console.error("HOME", err);
                 });
