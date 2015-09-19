@@ -6,7 +6,11 @@ var module = angular.module('catalog.controllers', [])
                 console.log('awoke');
                 $scope.categories = res.data;
                 //skip for test
-                $ionicSlideBoxDelegate.slide(4);
+                //$ionicSlideBoxDelegate.slide(4);
+                //var _firstSection =
+                //{url: "escgroup.net/esc-hot-rolled-sheet-piles/z-hot-rolled-sheet-piles/"};
+                //$state.go('section', {section: _firstSection});
+
             }, function (err) {
                 console.error("HOME", err);
             });
@@ -33,7 +37,6 @@ var module = angular.module('catalog.controllers', [])
                         $state.go('section', {section: _firstSection});
                     }
                 },100);
-
             }
         })
 
@@ -61,6 +64,7 @@ var module = angular.module('catalog.controllers', [])
             }
             $scope.slideHasChanged = function (index) {
                 if(index==1){
+                    $ionicScrollDelegate.scrollTop();
                     $ionicSlideBoxDelegate.enableSlide(false);
                 }else{
                     $ionicSlideBoxDelegate.enableSlide(true);
@@ -71,16 +75,37 @@ var module = angular.module('catalog.controllers', [])
                 $http.get('http://' + $scope.section.url).then(function (res) {
                     $scope.sectionData = res.data;
                     $scope.theTable=$scope.sectionData.tables[0];
-
-
-
-
-
-
                 }, function (err) {
                     console.error("HOME", err);
                 });
             }
+            $scope.isDetail=false;
+            $scope.showDetail=function($event) {
+                return
+            }
+                //$scope.isDetail=!$scope.isDetail;
+                //if(!$event){
+                //    return
+                //}
+                //var _target=$event.target.innerHTML;
+                //$scope.targetTitle=_target;
+                //var _rawhtml=$scope.sectionData.tables[0]
+                //var _html=$.parseHTML(_rawhtml)
+                //console.log('path  _html[0]');
+                //console.log(_html[0]);
+
+
+                //console.log($scope.sectionData.tables[0]);
+
+
+            //    $(document).ready(function() {
+            //    $("tbody").each(function(){
+            //        var html = $(this).html();
+            //        $(this).replaceWith("<ul>" + html + "</ul>");
+            //    });
+            //    )};
+            //
+            //};
 
             $scope.trustContent = function (html) {
                 return $sce.trustAsHtml(html);

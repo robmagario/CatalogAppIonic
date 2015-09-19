@@ -5,7 +5,7 @@
         <div bind-html-compile="sectionData.content"></div>
     </ion-header-bar>
     <!--<ion-content bind-html-compile="trustContent(sectionData.content)"></ion-content>-->
-    <ion-content class="content">
+    <ion-content class="content"  ng-click="debugIt()">
 
         <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged(index)">
             <ion-slide>

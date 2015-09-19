@@ -73,32 +73,6 @@ img {
 ion-content {
     /*background-color: #dddddd;*/
 }
-
-/*.headerBorder{*/
-/*border-style: solid;*/
-/*border-color: #dddddd;*/
-/*border-radius: 0 0 0 4em ;*/
-/*border-left-width:5px;*/
-/*border-top-width:0px;*/
-/*border-right-width:0px;*/
-/*border-bottom-width:0;*/
-/*}*/
-
-/*.headerBar{*/
-/*height: 30vh !important;*/
-/*background-color: #ffffff;*/
-/*}*/
-/*.headerBorder{*/
-/*width: 100%;*/
-/*height:100%;*/
-/*border-left-width:10px;*/
-/*border-top-width:0;*/
-/*border-right-width:10px;*/
-/*border-bottom-width:0;*/
-/*border-style: solid;*/
-/*border-color: #dddddd;*/
-/*border-radius: 0 0 0 4em ;*/
-/*}*/
 .headerBar {
     border-left-width: 10px;
     border-top-width: 10px;
@@ -107,8 +81,6 @@ ion-content {
     border-style: solid;
     border-color: #dddddd;
     height: 30vh !important;
-    /*border-radius: 0 0 0 4em ;*/
-    /*background-color: #dddddd;*/
 }
 
 .topSpace {
@@ -174,7 +146,7 @@ img.bordered {
 
 .esc-category-item img {
     border: 3px solid black;
-    border-radius: 2em;
+    border-radius: 2em;//
 }
 
 .maxSize2 {
@@ -215,18 +187,30 @@ tr, td {
     border: 0.1em solid #ffffff !important;
 }
 
-tr:nth-of-type(1) {
+/*tr:nth-of-type(1) {*/
+    /*background-color: #9d0420;*/
+    /*color: #ffffff;*/
+/*}*/
+/*tbody tr:nth-of-type(even) {*/
+    /*color: #9d0420;*/
+/*}*/
+
+
+tr:nth-of-type(1),tr:nth-of-type(2) {
     background-color: #9d0420;
+    color: #ffffff;
+}
+
+tbody tr:nth-of-type(even) {
+    color: #9d0420;
+}
+tbody tr:nth-of-type(1),tbody tr:nth-of-type(2) {
     color: #ffffff;
 }
 
 tbody {
     background-color: lightgray;
     color: black;
-}
-
-tbody tr:nth-of-type(even) {
-    color: #9d0420;
 }
 
 .cover1-page {
@@ -247,7 +231,7 @@ div > h4 {
 }
 
 .tableSlide div {
-    width: 100px;
+    width: 120px;
 }
 
 /* this code below makes the table responsive - RH Sep/9/2015 */

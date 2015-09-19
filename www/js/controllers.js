@@ -6,7 +6,7 @@ var module = angular.module('catalog.controllers', [])
                 console.log('awoke');
                 $scope.categories = res.data;
                 //skip for test
-                //$ionicSlideBoxDelegate.slide(4);
+                $ionicSlideBoxDelegate.slide(4);
                 //var _firstSection =
                 //{url: "escgroup.net/esc-hot-rolled-sheet-piles/z-hot-rolled-sheet-piles/"};
                 //$state.go('section', {section: _firstSection});
@@ -15,6 +15,10 @@ var module = angular.module('catalog.controllers', [])
                 console.error("HOME", err);
             });
             $scope.selectCategory = function ($category) {
+                if(!$category){
+                    return
+                }
+                //console.log($category);
                 $state.go('category', {category: $category});
             };
             $scope.slideHasChanged = function (index) {
@@ -51,9 +55,12 @@ var module = angular.module('catalog.controllers', [])
                 $scope.sections = $scope.category.sections;
 
             $scope.selectSection = function ($section) {
-                console.log($section);
+                //console.log($section);
+                if(!$section){
+                    return
+                }
                 $state.go('section', {section: $section});
-            }
+            };
         })
 
         .controller('SectionCtrl', function ($scope,$ionicSlideBoxDelegate,$ionicScrollDelegate, $ionicHistory, $compile, $sce, $state, $stateParams, $http, $ionicModal, $timeout) {
@@ -79,13 +86,25 @@ var module = angular.module('catalog.controllers', [])
                     console.error("HOME", err);
                 });
             }
+            $scope.debugIt=function(){
+              //console.log($(window).width());
+            };
             $scope.isDetail=false;
             $scope.showDetail=function($event) {
-                return
-            }
+                //console.log($ionicHistory.viewHistory());
+                //return;
+                var _deviceType;
+                if( /iPad/i.test(navigator.userAgent) ) {
+                    //table with sticky header for iPad
+
+                }
+                if($(window).width()<=768){
+                    //phone size
+                    //clicking on a table then shows information in a list
+                }
                 //$scope.isDetail=!$scope.isDetail;
                 //if(!$event){
-                //    return
+                //    return;
                 //}
                 //var _target=$event.target.innerHTML;
                 //$scope.targetTitle=_target;
@@ -93,6 +112,8 @@ var module = angular.module('catalog.controllers', [])
                 //var _html=$.parseHTML(_rawhtml)
                 //console.log('path  _html[0]');
                 //console.log(_html[0]);
+            //    //console.log('path  _html');
+            //    console.log(_rawhtml);
 
 
                 //console.log($scope.sectionData.tables[0]);
@@ -105,7 +126,7 @@ var module = angular.module('catalog.controllers', [])
             //    });
             //    )};
             //
-            //};
+            };
 
             $scope.trustContent = function (html) {
                 return $sce.trustAsHtml(html);
