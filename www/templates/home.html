@@ -129,7 +129,7 @@
                         <div class="col col-25" ng-click="selectCategory(categories[$index])">
 
                             <div class="row row-top">
-                                <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
+                                <div ng-show="{{categories[$index].thumbnail != undefined}}" class="full-card">
                                     <img class="bordered" ng-src="http://{{categories[$index].thumbnail}}">
                                 </div>
                             </div>
@@ -141,7 +141,7 @@
                         <div class="col col-25" ng-click="selectCategory(categories[$index + 1])">
 
                             <div class="row row-top">
-                                <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
+                                <div ng-show="{{categories[$index+1].thumbnail != undefined}}" class="full-card">
                                     <img class="bordered" ng-src="http://{{categories[$index+1].thumbnail}}">
                                 </div>
                             </div>
@@ -153,7 +153,7 @@
                         <div class="col col-25" ng-click="selectCategory(categories[$index + 2])">
 
                             <div class="row row-top">
-                                <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
+                                <div ng-show="{{categories[$index+2].thumbnail != undefined}}" class="full-card">
                                     <img class="bordered" ng-src="http://{{categories[$index+2].thumbnail}}">
                                 </div>
                             </div>
@@ -165,7 +165,7 @@
                         <div class="col col-25" ng-click="selectCategory(categories[$index + 3])">
 
                             <div class="row row-top">
-                                <div ng-show="{{category.thumbnail != undefined}}" class="full-card">
+                                <div ng-show="{{categories[$index+3].thumbnail != undefined}}" class="full-card">
                                     <img class="bordered" ng-src="http://{{categories[$index+3].thumbnail}}">
                                 </div>
                             </div>

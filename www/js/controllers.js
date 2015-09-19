@@ -18,7 +18,9 @@ var module = angular.module('catalog.controllers', [])
                 if(!$category){
                     return
                 }
-                //console.log($category);
+                //fixed the back button
+                $ionicHistory.clearHistory();
+                $ionicHistory.clearCache();
                 $state.go('category', {category: $category});
             };
             $scope.slideHasChanged = function (index) {
@@ -87,11 +89,10 @@ var module = angular.module('catalog.controllers', [])
                 });
             }
             $scope.debugIt=function(){
-              //console.log($(window).width());
+
             };
             $scope.isDetail=false;
             $scope.showDetail=function($event) {
-                //console.log($ionicHistory.viewHistory());
                 //return;
                 var _deviceType;
                 if( /iPad/i.test(navigator.userAgent) ) {
@@ -102,18 +103,21 @@ var module = angular.module('catalog.controllers', [])
                     //phone size
                     //clicking on a table then shows information in a list
                 }
-                //$scope.isDetail=!$scope.isDetail;
-                //if(!$event){
-                //    return;
-                //}
+                $scope.isDetail=!$scope.isDetail;
+                if(!$event){
+                    return;
+                }
                 //var _target=$event.target.innerHTML;
                 //$scope.targetTitle=_target;
                 //var _rawhtml=$scope.sectionData.tables[0]
+                //var _html=$(_rawhtml)
                 //var _html=$.parseHTML(_rawhtml)
                 //console.log('path  _html[0]');
-                //console.log(_html[0]);
-            //    //console.log('path  _html');
-            //    console.log(_rawhtml);
+                //console.log(_html[0].);
+                //console.log($(_html[0]));
+                //console.log(_html[0].tbody);
+                //console.log('path  _html');
+                //console.log(_rawhtml);
 
 
                 //console.log($scope.sectionData.tables[0]);
