@@ -2,14 +2,13 @@ var module = angular.module('catalog.controllers', [])
         .controller('HomeCtrl', function ($scope, $state, $http, $ionicHistory, $ionicScrollDelegate, $ionicSlideBoxDelegate, $timeout,$ionicNavBarDelegate) {
             $http.get('http://escgroup.net/').then(function (res) {
                 $ionicScrollDelegate.getScrollView().options.scrollingY = false;
-                //$scope.stayHere();
                 console.log('awoke');
                 $scope.categories = res.data;
                 //skip for test
-                $ionicSlideBoxDelegate.slide(4);
-                //var _firstSection =
-                //{url: "escgroup.net/esc-hot-rolled-sheet-piles/z-hot-rolled-sheet-piles/"};
-                //$state.go('section', {section: _firstSection});
+                //$ionicSlideBoxDelegate.slide(4);
+                var _firstSection =
+                {url: "escgroup.net/esc-hot-rolled-sheet-piles/z-hot-rolled-sheet-piles/"};
+                $state.go('section', {section: _firstSection});
 
             }, function (err) {
                 console.error("HOME", err);
@@ -88,6 +87,9 @@ var module = angular.module('catalog.controllers', [])
                     console.error("HOME", err);
                 });
             }
+            $scope.slideTo=function(index){
+                $ionicSlideBoxDelegate.slide(index);
+            };
             $scope.debugIt=function(){
 
             };

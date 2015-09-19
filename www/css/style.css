@@ -63,11 +63,22 @@ img {
     /*position: relative;*/
 }
 
+.sectionDescription{
+/*font-size: 2em;*/
+}
+
 .fullScreenImage {
     width: 95%;
     max-width: 100%;
     height: 95%;
     max-height: 100%;
+}
+
+ion-footer-bar .icon{
+position: relative !important;
+    top:0 !important;;
+    margin: auto;
+    width:5em;
 }
 
 ion-content {

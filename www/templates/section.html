@@ -5,11 +5,14 @@
         <div bind-html-compile="sectionData.content"></div>
     </ion-header-bar>
     <!--<ion-content bind-html-compile="trustContent(sectionData.content)"></ion-content>-->
-    <ion-content class="content" ng-click="debugIt()">
+    <ion-content class="content sectionContent" ng-click="debugIt()">
 
         <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged(index)">
             <ion-slide>
                 <img class="diagram" ng-src="http://escgroup.net/{{sectionData.diagram}}">
+                <div class="sectionDescription">
+                    your description here
+                </div>
                 <img class="headerImage" ng-src="http://escgroup.net/{{sectionData.headerImage}}">
             </ion-slide>
             <ion-slide>
@@ -26,6 +29,17 @@
                     </div>
                 </div>
             </ion-slide>
+            <ion-slide>
+                <img class="fullScreenImage" src="http://ingridwu.dmmdmcfatter.com/wp-content/uploads/2015/01/placeholder.png">
+            </ion-slide>
         </ion-slide-box>
     </ion-content>
+    <ion-footer-bar class="bar-light">
+        <div class="button icon ion-ios-arrow-back" ng-click="slideTo(0)">
+        </div>
+        <div class="button icon ion-navicon" ng-click="slideTo(1)">
+        </div>
+        <div class="button icon ion-image" ng-click="slideTo(2)">
+        </div>
+    </ion-footer-bar>
 </ion-view>
