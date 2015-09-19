@@ -11,14 +11,15 @@
             <ion-slide>
                 <img class="diagram" ng-src="http://escgroup.net/{{sectionData.diagram}}">
                 <div class="sectionDescription">
-                    your description here
+                    {{sectionData.diagram_description}}
                 </div>
                 <img class="headerImage" ng-src="http://escgroup.net/{{sectionData.headerImage}}">
             </ion-slide>
             <ion-slide>
                 <div class="tableSlide" ng-show="!isDetail" ng-click="showDetail($event)">
-                    <ion-scroll direction="xy" style="width: 100%" ng-style="{height: 90 + 'vh'}">
+                    <ion-scroll direction="xy" style="width: 100%" ng-style="{height: 85 + 'vh'}">
                         <div bind-html-compile="theTable"></div>
+                        <br>
                     </ion-scroll>
                 </div>
                 <div class="list card" ng-show="isDetail" ng-click="showDetail()">
@@ -34,12 +35,30 @@
             </ion-slide>
         </ion-slide-box>
     </ion-content>
-    <ion-footer-bar class="bar-light">
-        <div class="button icon ion-ios-arrow-back" ng-click="slideTo(0)">
-        </div>
-        <div class="button icon ion-navicon" ng-click="slideTo(1)">
-        </div>
-        <div class="button icon ion-image" ng-click="slideTo(2)">
-        </div>
-    </ion-footer-bar>
+    <!--<ion-footer-bar class="bar-light">-->
+        <!--<div class="button icon ion-ios-arrow-back" title="Home" ng-click="slideTo(0)">-->
+            <!--aaaaa-->
+        <!--</div>-->
+        <!--<div class="button icon ion-navicon" ng-click="slideTo(1)">-->
+        <!--</div>-->
+        <!--<div class="button icon ion-image" ng-click="slideTo(2)">-->
+        <!--</div>-->
+    <!--</ion-footer-bar>-->
+    <ion-tabs class="tabs-positive tabs-icon-only">
+        <ion-tab title="Home" icon="ion-home">
+            <ion-nav-view name="home-tab"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="Home" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
+            <!-- Tab 1 content -->
+        </ion-tab>
+
+        <ion-tab title="About" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
+            <!-- Tab 2 content -->
+        </ion-tab>
+
+        <ion-tab title="Settings" icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline">
+            <!-- Tab 3 content -->
+        </ion-tab>
+
+    </ion-tabs>
 </ion-view>

@@ -95,7 +95,7 @@ var module = angular.module('catalog.controllers', [])
             };
             $scope.isDetail=false;
             $scope.showDetail=function($event) {
-                //return;
+                return;
                 var _deviceType;
                 if( /iPad/i.test(navigator.userAgent) ) {
                     //table with sticky header for iPad
