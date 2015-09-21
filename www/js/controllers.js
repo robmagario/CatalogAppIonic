@@ -5,7 +5,7 @@ var module = angular.module('catalog.controllers', [])
                 console.log('awoke');
                 $scope.categories = res.data;
                 //skip for test
-                $ionicSlideBoxDelegate.slide(2);
+                //$ionicSlideBoxDelegate.slide(2);
                 //var _firstSection =
                 //{url: "escgroup.net/esc-hot-rolled-sheet-piles/z-hot-rolled-sheet-piles/"};
                 //$state.go('section', {section: _firstSection});
