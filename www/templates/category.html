@@ -4,12 +4,13 @@
     </ion-header-bar>
     <ion-content padding="True">
         <br>
+
         <h2 id="tapHereIcon" class="red button button-light"><b>Tap the article to view detailed information</b></h2>
         <ion-list>
             <div class="row esc-category-item" ng-repeat="section in sections" ng-if="$index % 4 == 0">
                 <div class="col col-25" ng-click="selectSection(sections[$index])">
                     <div class="row row-top">
-                        <div class="full-card" ng-show="sections[$index].images != undefined" >
+                        <div class="full-card" ng-show="sections[$index].images != undefined">
                             <img class="bordered" ng-src="http://{{sections[$index].images}}">
                         </div>
                     </div>
@@ -28,19 +29,19 @@
                     </div>
                 </div>
                 <div class="col col-25" ng-click="selectSection(sections[$index+2])">
-                <div class="row row-top">
-                    <div class="full-card" ng-show="sections[$index+2].images != undefined">
-                        <img class="bordered" ng-src="http://{{sections[$index+2].images}}">
+                    <div class="row row-top">
+                        <div class="full-card" ng-show="sections[$index+2].images != undefined">
+                            <img class="bordered" ng-src="http://{{sections[$index+2].images}}">
+                        </div>
                     </div>
-                </div>
-                <div class="row row-bottom text">
-                    {{sections[$index+2].title}}
-                </div>
+                    <div class="row row-bottom text">
+                        {{sections[$index+2].title}}
+                    </div>
                 </div>
                 <div class="col col-25" ng-click="selectSection(sections[$index+3])">
                     <div class="row row-top">
                         <div class="full-card" ng-show="sections[$index+3].images != undefined">
-                        <!--<div class="full-card" ng-show="sections[$index+3].images != undefined">-->
+                            <!--<div class="full-card" ng-show="sections[$index+3].images != undefined">-->
                             <img class="bordered" ng-src="http://{{sections[$index+3].images}}">
                         </div>
                     </div>

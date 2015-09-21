@@ -10,6 +10,7 @@
         <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged(index)">
             <ion-slide>
                 <img class="diagram" ng-src="http://escgroup.net/{{sectionData.diagram}}">
+
                 <div class="sectionDescription">
                     {{sectionData.diagram_description}}
                 </div>
@@ -23,7 +24,9 @@
                     </ion-scroll>
                 </div>
                 <div class="list card" ng-show="isDetail" ng-click="showDetail()">
-                    <h2><div class="item item-divider">{{targetTitle}}</div></h2>
+                    <h2>
+                        <div class="item item-divider">{{targetTitle}}</div>
+                    </h2>
                     <div class="item item-divider">Recent Updates</div>
                     <div class="item item-body">
                         aaaaa
@@ -32,7 +35,8 @@
             </ion-slide>
             <ion-slide>
                 <div class="fullPictureContainer">
-                <img class="fullScreenImage centerize" ng-src="http://escgroup.net/{{sectionData.section_fullsize_picture}}">
+                    <img class="fullScreenImage centerize"
+                         ng-src="http://escgroup.net/{{sectionData.section_fullsize_picture}}">
                 </div>
             </ion-slide>
         </ion-slide-box>

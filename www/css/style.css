@@ -398,6 +398,11 @@ div > h4 {
     /*margin-right: 2em;*/
     /*margin-top: 50px !important;*/
 }
+.videoGroup{
+    float:right;
+    width: 100%;
+    width: 45vw;
+}
 
 #tapHereIcon {
     left: 20%;
