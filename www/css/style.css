@@ -50,6 +50,13 @@
     /*-ms-flex-align: center !important;*/
     /*align-items: center !important;*/
 }
+.fullPictureContainer{
+    position: relative;
+    height:80vh;
+    margin: 0.5em;
+}
+.centerize{
+}
 
 table, tr, td {
     text-align: center !important;

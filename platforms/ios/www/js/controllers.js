@@ -1,43 +1,48 @@
 var module = angular.module('catalog.controllers', [])
-        .controller('CoverCtrl', function ($scope, $state, $ionicHistory,$ionicScrollDelegate, $ionicSlideBoxDelegate, $timeout) {
-            $scope.slideHasChanged = function (index) {
-                $ionicScrollDelegate.scrollTop();
-                if (index == 2) {
-                    $state.go('home');
-                    $timeout(function () {
-                        $ionicSlideBoxDelegate.slide(0, 0);
-                    }, 300);
-                }
-                $timeout( function() {
-                    //$ionicScrollDelegate.resize();
-                    //console.log('resize');
-                }, 100);
-            }
-        })
-        .controller('HomeCtrl', function ($scope, $state, $http,$ionicSlideBoxDelegate,$ionicScrollDelegate, $ionicModal, $timeout) {
-            //$http.get('http://www.joronoko.com/').then(function (res) {
+        .controller('HomeCtrl', function ($scope, $state, $http, $ionicHistory, $ionicScrollDelegate, $ionicSlideBoxDelegate, $timeout,$ionicNavBarDelegate) {
             $http.get('http://escgroup.net/').then(function (res) {
+                $ionicScrollDelegate.getScrollView().options.scrollingY = false;
+                console.log('awoke');
                 $scope.categories = res.data;
+                //skip for test
+                $ionicSlideBoxDelegate.slide(4);
+                //var _firstSection =
+                //{url: "escgroup.net/esc-hot-rolled-sheet-piles/z-hot-rolled-sheet-piles/"};
+                //$state.go('section', {section: _firstSection});
+
             }, function (err) {
                 console.error("HOME", err);
             });
-            $scope.slideHasChanged = function (index) {
-                if (index == 1) {
-                    $ionicScrollDelegate.scrollTop();
-                    //$ionicScrollDelegate.resize();
-                    $scope.usesPileShow=true;
-                }
-                if (index == 2) {
-                    console.log('here');
-                    var _firstSection={url:
-                        "escgroup.net/esc-hot-rolled-sheet-piles/z-hot-rolled-sheet-piles/"};
-                    $state.go('section', {section:_firstSection});
-                }
-            }
             $scope.selectCategory = function ($category) {
+                if(!$category){
+                    return
+                }
+                //fixed the back button
+                $ionicHistory.clearHistory();
+                $ionicHistory.clearCache();
                 $state.go('category', {category: $category});
+            };
+            $scope.slideHasChanged = function (index) {
+                $timeout(function () {
+                    //ugly code
+                    var usesPileIndex = 2;
+                    var aboutESCIndex = 3;
+                    var contentIndex = 4;
+                    if (index == aboutESCIndex) {
+                        $ionicScrollDelegate.getScrollView().options.scrollingY = true;
+                    } else {
+                        $ionicScrollDelegate.scrollTop();
+                        $timeout(function () {
+                            $ionicScrollDelegate.getScrollView().options.scrollingY = false;
+                        }, 100);
+                    }
+                    if (index == 5) {
+                        var _firstSection =
+                        {url: "escgroup.net/esc-hot-rolled-sheet-piles/z-hot-rolled-sheet-piles/"};
+                        $state.go('section', {section: _firstSection});
+                    }
+                },100);
             }
-
         })
 
         .controller('CategoryCtrl', function ($scope, $state, $ionicHistory, $stateParams, $http, $ionicModal, $timeout) {
@@ -51,25 +56,83 @@ var module = angular.module('catalog.controllers', [])
                 $scope.sections = $scope.category.sections;
 
             $scope.selectSection = function ($section) {
-                console.log($section);
+                //console.log($section);
+                if(!$section){
+                    return
+                }
                 $state.go('section', {section: $section});
-            }
+            };
         })
 
-        .controller('SectionCtrl', function ($scope, $ionicHistory, $compile, $sce, $state, $stateParams, $http, $ionicModal, $timeout) {
+        .controller('SectionCtrl', function ($scope,$ionicSlideBoxDelegate,$ionicScrollDelegate, $ionicHistory, $compile, $sce, $state, $stateParams, $http, $ionicModal, $timeout) {
             if ($stateParams.section == null) {
                 $state.go('home');
                 $ionicHistory.clearHistory();
                 $ionicHistory.clearCache();
             }
+            $scope.slideHasChanged = function (index) {
+                if(index==1){
+                    $ionicScrollDelegate.scrollTop();
+                    $ionicSlideBoxDelegate.enableSlide(false);
+                }else{
+                    $ionicSlideBoxDelegate.enableSlide(true);
+                }
+            };
             $scope.section = $stateParams.section;
             if ($scope.section != null) {
                 $http.get('http://' + $scope.section.url).then(function (res) {
                     $scope.sectionData = res.data;
+                    $scope.theTable=$scope.sectionData.tables[0];
                 }, function (err) {
                     console.error("HOME", err);
                 });
             }
+            $scope.slideTo=function(index){
+                $ionicSlideBoxDelegate.slide(index);
+            };
+            $scope.debugIt=function(){
+
+            };
+            $scope.isDetail=false;
+            $scope.showDetail=function($event) {
+                return;
+                var _deviceType;
+                if( /iPad/i.test(navigator.userAgent) ) {
+                    //table with sticky header for iPad
+
+                }
+                if($(window).width()<=768){
+                    //phone size
+                    //clicking on a table then shows information in a list
+                }
+                $scope.isDetail=!$scope.isDetail;
+                if(!$event){
+                    return;
+                }
+                //var _target=$event.target.innerHTML;
+                //$scope.targetTitle=_target;
+                //var _rawhtml=$scope.sectionData.tables[0]
+                //var _html=$(_rawhtml)
+                //var _html=$.parseHTML(_rawhtml)
+                //console.log('path  _html[0]');
+                //console.log(_html[0].);
+                //console.log($(_html[0]));
+                //console.log(_html[0].tbody);
+                //console.log('path  _html');
+                //console.log(_rawhtml);
+
+
+                //console.log($scope.sectionData.tables[0]);
+
+
+            //    $(document).ready(function() {
+            //    $("tbody").each(function(){
+            //        var html = $(this).html();
+            //        $(this).replaceWith("<ul>" + html + "</ul>");
+            //    });
+            //    )};
+            //
+            };
 
             $scope.trustContent = function (html) {
                 return $sce.trustAsHtml(html);
@@ -83,11 +146,7 @@ var module = angular.module('catalog.controllers', [])
                     scope.$watch(function () {
                         return scope.$eval(attrs.bindHtmlCompile);
                     }, function (value) {
-                        // Incase value is a TrustedValueHolderType, sometimes it
-                        // needs to be explicitly called into a string in order to
-                        // get the HTML string.
                         element.html(value && value.toString());
-                        // If scope is provided use it, otherwise use parent scope
                         var compileScope = scope;
                         if (attrs.bindHtmlScope) {
                             compileScope = scope.$eval(attrs.bindHtmlScope);

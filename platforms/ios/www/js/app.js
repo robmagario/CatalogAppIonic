@@ -24,15 +24,12 @@ angular.module('catalog', ['ionic', 'catalog.controllers'])
                 // org.apache.cordova.statusbar required
                 StatusBar.styleDefault();
             }
+            //$ionicScrollDelegate.getScrollView().options.scrollingY = false;
+
         });
     })
     .config(function ($stateProvider, $httpProvider, $urlRouterProvider,$sceDelegateProvider) {
         $stateProvider
-            .state('cover', {
-                url: '/',
-                templateUrl: 'templates/cover.html',
-                controller: 'CoverCtrl'
-            })
             .state('home', {
                 url: '/',
                 templateUrl: 'templates/home.html',
@@ -42,7 +39,10 @@ angular.module('catalog', ['ionic', 'catalog.controllers'])
                 url: '/category/',
                 templateUrl: 'templates/category.html',
                 controller: 'CategoryCtrl',
-                params: {category: null}
+                params: {category: null},
+                //don't know why,without setting the cache false,clicking one category will result in
+                //going to the same section by John
+                cache: false
             })
             .state('section', {
                 url: '/section/',

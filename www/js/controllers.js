@@ -64,12 +64,13 @@ var module = angular.module('catalog.controllers', [])
             };
         })
 
-        .controller('SectionCtrl', function ($scope,$ionicSlideBoxDelegate,$ionicScrollDelegate, $ionicHistory, $compile, $sce, $state, $stateParams, $http, $ionicModal, $timeout) {
+        .controller('SectionCtrl', function ($scope,$ionicLoading,$ionicSlideBoxDelegate,$ionicScrollDelegate, $ionicHistory, $compile, $sce, $state, $stateParams, $http, $ionicModal, $timeout) {
             if ($stateParams.section == null) {
                 $state.go('home');
                 $ionicHistory.clearHistory();
                 $ionicHistory.clearCache();
             }
+
             $scope.slideHasChanged = function (index) {
                 if(index==1){
                     $ionicScrollDelegate.scrollTop();
@@ -77,6 +78,7 @@ var module = angular.module('catalog.controllers', [])
                 }else{
                     $ionicSlideBoxDelegate.enableSlide(true);
                 }
+                $scope.slideTh=index;
             };
             $scope.section = $stateParams.section;
             if ($scope.section != null) {
@@ -96,7 +98,6 @@ var module = angular.module('catalog.controllers', [])
             $scope.isDetail=false;
             $scope.showDetail=function($event) {
                 return;
-                var _deviceType;
                 if( /iPad/i.test(navigator.userAgent) ) {
                     //table with sticky header for iPad
 
