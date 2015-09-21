@@ -55,6 +55,27 @@
     height:80vh;
     margin: 0.5em;
 }
+.fullsizeDiv{
+    position: relative;
+    width: 100%;
+    height:85vh;
+    /*background-color: #003051;*/
+}
+
+#cover2Img,#cover3Img {
+    width: auto;
+    height:50%;
+}
+
+@media only screen and (max-width: 400px) {
+    .fullsizeDiv{
+        /*max-width: 95vw;*/
+        /*background-color: #003051;*/
+    }
+    #cover2Img, #cover3Img {
+        height:40%;
+    }
+}
 .centerize{
 }
 
@@ -312,7 +333,7 @@ div > h4 {
     background-color: #ffffff;
 }
 
-#cover2Img, #cover3Img, #cover4Img, #usesPile1Img {
+#usesPile1Img {
     /*border-radius: 0 0 3em 0;*/
     box-shadow: -10px 10px 8px #888888;
     margin: 0.1em;
@@ -343,31 +364,6 @@ div > h4 {
     right: 0;
 }
 
-#cover2Img, #cover3Img, #cover4Img {
-    margin: 0.4em;
-    width: 90%;
-}
-
-#cover2Img {
-    height: 80vh;
-}
-
-#cover3Img, #cover4Img {
-    height: 38vh;
-}
-
-@media only screen and (orientation: portrait) {
-    #cover2Img {
-        width: 95%;
-        height: 80vh;
-    }
-
-    #cover3Img, #cover4Img {
-        width: 95%;
-        height: 40vh;
-    }
-}
-
 .coverTitle {
     margin: 0.8em;
     margin-top: 0.8em !important;
@@ -391,7 +387,7 @@ div > h4 {
 
 .aboutEscSlide .video {
     width: 100%;
-    height: auto;
+    /*height: auto;*/
     height: 40vh;
     padding: 0.5em;
     margin-bottom: 2em;
@@ -399,8 +395,10 @@ div > h4 {
     /*margin-top: 50px !important;*/
 }
 .videoGroup{
+
+    position: relative;
     float:right;
-    width: 100%;
+    /*width: 100%;*/
     width: 45vw;
 }
 
