@@ -13,13 +13,6 @@ var module = angular.module('catalog.controllers', [])
             }, function (err) {
                 console.error("HOME", err);
             });
-            $scope.playVideo= function (e,index) {
-                //$('#video1').append('<iframe class="video" id="video1" src="https://www.youtube.com/embed/pXjEJv7BOOM" frameborder="0" allowfullscreen></iframe>');
-                //$("#video1")[0].src += "&autoplay=0";
-                //e.preventDefault();
-
-
-            };
             $scope.selectCategory = function ($category) {
                 if(!$category){
                     return
