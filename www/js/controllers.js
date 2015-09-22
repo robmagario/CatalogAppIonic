@@ -5,7 +5,7 @@ var module = angular.module('catalog.controllers', [])
                 console.log('awoke');
                 $scope.categories = res.data;
                 //skip for test
-                //$ionicSlideBoxDelegate.slide(2);
+                //$ionicSlideBoxDelegate.slide(3);
                 //var _firstSection =
                 //{url: "escgroup.net/esc-hot-rolled-sheet-piles/z-hot-rolled-sheet-piles/"};
                 //$state.go('section', {section: _firstSection});
@@ -13,6 +13,13 @@ var module = angular.module('catalog.controllers', [])
             }, function (err) {
                 console.error("HOME", err);
             });
+            $scope.playVideo= function (e,index) {
+                //$('#video1').append('<iframe class="video" id="video1" src="https://www.youtube.com/embed/pXjEJv7BOOM" frameborder="0" allowfullscreen></iframe>');
+                //$("#video1")[0].src += "&autoplay=0";
+                //e.preventDefault();
+
+
+            };
             $scope.selectCategory = function ($category) {
                 if(!$category){
                     return
@@ -28,13 +35,16 @@ var module = angular.module('catalog.controllers', [])
                     var usesPileIndex = 2;
                     var aboutESCIndex = 3;
                     var contentIndex = 4;
+                    if(index==3){
+                        $('#video1,#video2,#video3,#video4').show();
+                    }
                     if (index == aboutESCIndex) {
                         $ionicScrollDelegate.getScrollView().options.scrollingY = true;
                     } else {
                         $ionicScrollDelegate.scrollTop();
                         $timeout(function () {
                             $ionicScrollDelegate.getScrollView().options.scrollingY = false;
-                        }, 100);
+                        }, 200);
                     }
                     if (index == 5) {
                         var _firstSection =
@@ -126,13 +136,13 @@ var module = angular.module('catalog.controllers', [])
                 //console.log($scope.sectionData.tables[0]);
 
 
-            //    $(document).ready(function() {
-            //    $("tbody").each(function(){
-            //        var html = $(this).html();
-            //        $(this).replaceWith("<ul>" + html + "</ul>");
-            //    });
-            //    )};
-            //
+                //    $(document).ready(function() {
+                //    $("tbody").each(function(){
+                //        var html = $(this).html();
+                //        $(this).replaceWith("<ul>" + html + "</ul>");
+                //    });
+                //    )};
+                //
             };
 
             $scope.trustContent = function (html) {
