@@ -5,7 +5,7 @@
     <ion-content padding="True">
         <br>
 
-        <h2 id="tapHereIcon" class="red button button-light"><b>Tap the article to view detailed information</b></h2>
+        <h2 id="tapHereIcon" class="red button button-light" ng-disabled='true'><b>Tap the article to view detailed information</b></h2>
         <ion-list>
             <div class="row esc-category-item" ng-repeat="section in sections" ng-if="$index % 4 == 0">
                 <div class="col col-25" ng-click="selectSection(sections[$index])">

@@ -5,9 +5,12 @@ var module = angular.module('catalog.controllers', [])
                 console.log('awoke');
                 $scope.categories = res.data;
                 //skip for test
-                //$ionicSlideBoxDelegate.slide(3);
+                //$ionicSlideBoxDelegate.slide(4);
                 //var _firstSection =
                 //{url: "escgroup.net/esc-hot-rolled-sheet-piles/z-hot-rolled-sheet-piles/"};
+                //$state.go('section', {section: _firstSection});
+                //var _firstSection =
+                //{url: "escgroup.net/piling-accessories/test/"};
                 //$state.go('section', {section: _firstSection});
 
             }, function (err) {
@@ -59,7 +62,7 @@ var module = angular.module('catalog.controllers', [])
                 $scope.sections = $scope.category.sections;
 
             $scope.selectSection = function ($section) {
-                //console.log($section);
+                console.log($section);
                 if(!$section){
                     return
                 }
@@ -99,8 +102,9 @@ var module = angular.module('catalog.controllers', [])
 
             };
             $scope.isDetail=false;
+            var $table=$('#thetable table');
             $scope.showDetail=function($event) {
-                return;
+                $ionicScrollDelegate.scrollTop();
                 if( /iPad/i.test(navigator.userAgent) ) {
                     //table with sticky header for iPad
 
@@ -110,32 +114,29 @@ var module = angular.module('catalog.controllers', [])
                     //clicking on a table then shows information in a list
                 }
                 $scope.isDetail=!$scope.isDetail;
+                if(!$scope.isDetail){
+                    $scope.targetTitle='';
+                }
                 if(!$event){
                     return;
                 }
-                //var _target=$event.target.innerHTML;
-                //$scope.targetTitle=_target;
-                //var _rawhtml=$scope.sectionData.tables[0]
-                //var _html=$(_rawhtml)
-                //var _html=$.parseHTML(_rawhtml)
-                //console.log('path  _html[0]');
-                //console.log(_html[0].);
-                //console.log($(_html[0]));
-                //console.log(_html[0].tbody);
-                //console.log('path  _html');
-                //console.log(_rawhtml);
-
-
-                //console.log($scope.sectionData.tables[0]);
-
-
-                //    $(document).ready(function() {
-                //    $("tbody").each(function(){
-                //        var html = $(this).html();
-                //        $(this).replaceWith("<ul>" + html + "</ul>");
-                //    });
-                //    )};
-                //
+                var _rootTitle=$('#thetable').find('tr:eq(0)').find('td:eq(0)').text();
+                _rootTitle=String(_rootTitle).trim();
+                var _trTarget=$event.target.parentNode;
+                var _trIndex=$('#thetable table tr').index(_trTarget);
+                _trIndex--;
+                if(_trIndex<0){
+                    $scope.isDetail=false;
+                    return;
+                }
+                var _json=$('#thetable table').tableToJSON();
+                $.each(_json[_trIndex], function(index, value) {
+                    if(index==_rootTitle){
+                        $scope.targetTitle=value+'<br>';
+                        delete _json[_trIndex][String(_rootTitle)];
+                    }
+                });
+                $scope.tableContents=_json[_trIndex];
             };
 
             $scope.trustContent = function (html) {

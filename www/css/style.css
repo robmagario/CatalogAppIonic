@@ -148,7 +148,7 @@ img.bordered {
 }
 
 @media only screen and (max-width: 600px) {
-    .item-text-wrap .text {
+    .item-text-wrap .text ,.esc-category-item .text{
         font-size: 0.6em;
     }
 }
@@ -289,10 +289,19 @@ div > h4 {
 .tableSlide .row{
     background-color: #ffffff;
 }
-.tableSlide .scroll-bar-indicator {
+.scroll-bar{
+    width: 0;
     display: none;
 }
 
+.topIndex{
+    z-index: 9999;
+}
+
+.absolute{
+    top:5px;
+    position: absolute;
+}
 
 #ESCicon {
     width: 6em;

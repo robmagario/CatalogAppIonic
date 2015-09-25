@@ -1,12 +1,13 @@
-<ion-view view-title="{{section.title}}" class="sectionView">
+<ion-view view-title="{{targetTitle}}{{section.title}}" class="sectionView">
     <ion-header-bar>
         <h1 class="title">{{section.title}}</h1>
 
         <div bind-html-compile="sectionData.content"></div>
     </ion-header-bar>
+    <br>
+    <!--<h2 ng-show="isDetail" class="topIndex">{{targetTitle}}</h2>-->
     <!--<ion-content bind-html-compile="trustContent(sectionData.content)"></ion-content>-->
     <ion-content class="content sectionContent" ng-click="debugIt()">
-
         <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged(index)">
             <ion-slide>
                 <img class="diagram" ng-src="http://escgroup.net/{{sectionData.diagram}}">
@@ -17,19 +18,20 @@
                 <img class="headerImage" ng-src="http://escgroup.net/{{sectionData.headerImage}}">
             </ion-slide>
             <ion-slide>
+                <!--<h2 ng-show="isDetail">{{targetTitle}}</h2>-->
                 <div class="tableSlide" ng-show="!isDetail" ng-click="showDetail($event)">
                     <ion-scroll direction="xy" style="width: 99%" ng-style="{height: 85 + 'vh'}">
-                        <div bind-html-compile="theTable"></div>
+                        <div bind-html-compile="theTable" id="thetable"></div>
                         <br>
                     </ion-scroll>
                 </div>
                 <div class="list card" ng-show="isDetail" ng-click="showDetail()">
-                    <h2>
-                        <div class="item item-divider">{{targetTitle}}</div>
-                    </h2>
-                    <div class="item item-divider">Recent Updates</div>
-                    <div class="item item-body">
-                        aaaaa
+                    <div ng-repeat="(key, value) in tableContents">
+                        <!--<div class="item item-divider"></div>-->
+                        <div class="item item-divider">{{key}}</div>
+                        <div class="item item-body">
+                            {{value}}
+                        </div>
                     </div>
                 </div>
             </ion-slide>
